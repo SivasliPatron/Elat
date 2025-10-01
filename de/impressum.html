@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Elat Handels GmbH</title>
+    
+    <!-- Grundlegende Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shared-components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/impressum.css">
+    
+    <!-- NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES! -->
+    <link rel="stylesheet" href="css/navigation-fix.css">
+    
+    <!-- Premium Web-Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    
+    <!-- Cookie Consent System mit DSGVO-Optimierung -->
+    <link rel="stylesheet" href="css/consent.css">
+    
+    <!-- TailwindCSS für Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'dark': '#1F2937',
+                        'darker': '#111827',
+                        'darkest': '#0F172A',
+                        'accent': {
+                            DEFAULT: '#B83232',
+                            'light': '#D25050',
+                            'dark': '#8A2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-black transition-colors duration-300">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50" style="transform: none !important;">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="../bilder/Elat Logo.png" alt="Elat Handels GmbH" class="h-10">
+                </a>                <!-- Desktop Navigation -->
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-800 hover:text-accent">Startseite</a></li>
+                        <li><a href="produkte.html" class="nav-link text-gray-800 hover:text-accent">Produkte</a></li>
+                        <li class="relative dropdown-container">
+                            <a href="#" class="nav-link text-gray-800 hover:text-accent flex items-center">
+                                Produktberatung <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-200"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-car mr-3 text-accent"></i>
+                                        PKW Motoröl Info
+                                    </a>
+                                    <a href="lkw-motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-truck mr-3 text-accent"></i>
+                                        LKW Motoröl Info
+                                    </a>
+                                    <a href="getriebeoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-cogs mr-3 text-accent"></i>
+                                        Getriebeöl Info
+                                    </a>
+                                    <a href="hydraulikoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-tint mr-3 text-accent"></i>
+                                        Hydrauliköl Info
+                                    </a>
+                                    <a href="frostschutz.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-snowflake mr-3 text-accent"></i>
+                                        Frostschutz Info
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="oelwegweiser.html" class="nav-link text-gray-800 hover:text-accent">Ölwegweiser</a></li>
+                        <li><a href="altoelentsorgung.html" class="nav-link text-gray-800 hover:text-accent">Altöl</a></li>
+                        <li><a href="ueber-uns.html" class="nav-link text-gray-800 hover:text-accent">Über uns</a></li>
+                        <li>
+                            <a href="kontakt.html" class="btn-primary ml-4">
+                                Jetzt anfragen
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false" title="Menü öffnen">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Startseite</a></li>
+                    <li><a href="produkte.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Produkte</a></li>
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex items-center justify-between py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">
+                            <span>Produktberatung</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden ml-4 mt-2 space-y-1">
+                            <a href="motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-car mr-2 text-accent"></i>PKW Motoröl Info
+                            </a>
+                            <a href="lkw-motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-truck mr-2 text-accent"></i>LKW Motoröl Info
+                            </a>
+                            <a href="getriebeoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-cogs mr-2 text-accent"></i>Getriebeöl Info
+                            </a>
+                            <a href="hydraulikoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-tint mr-2 text-accent"></i>Hydrauliköl Info
+                            </a>
+                            <a href="frostschutz.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-snowflake mr-2 text-accent"></i>Frostschutz Info
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="oelwegweiser.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Ölwegweiser</a></li>
+                    <li><a href="altoelentsorgung.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Altöl</a></li>
+                    <li><a href="ueber-uns.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Über uns</a></li>
+                    <li class="pt-2 px-4">
+                        <a href="kontakt.html" class="btn-primary inline-flex items-center justify-center w-fit mx-auto">
+                            Jetzt anfragen
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Title section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3 text-black">Impressum</h1>
+                <p class="text-xl text-gray-600">Rechtliche Informationen und Kontaktdaten</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 container mx-auto px-4">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="prose prose-lg max-w-none text-black">
+                <h2 class="text-2xl font-bold mb-4 text-black">Impressum</h2>
+                <p>
+                    Elat Handels GmbH<br>
+                    Hörderstraße 353<br>
+                    58454 Witten
+                </p>
+                
+                <p class="mt-4">
+                    <strong>Handelsregister:</strong> HRB 16285<br>
+                    <strong>Registergericht:</strong> Amtsgericht Bochum
+                </p>
+                
+                <p class="mt-4">
+                    <strong>Vertreten durch:</strong><br>
+                    A. Perjaru
+                </p>
+                
+                <p class="mt-4">
+                    <em>Realisierung erfolgte durch die SEO Agentur Optimerch</em>
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">KONTAKT</h2>
+                <p>
+                    <strong>Telefon:</strong> +49 (0) 2306 91 29 38 0<br>
+                    <strong>E-Mail:</strong> <a href="mailto:info@elathandels.de" class="text-black hover:underline">info@elathandels.de</a>
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">UMSATZSTEUER-ID</h2>
+                <p>
+                    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                    DE309196773
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">EU-STREITSCHLICHTUNG</h2>
+                <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" class="text-black hover:underline">https://ec.europa.eu/consumers/odr</a>.<br>
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">VERBRAUCHERSTREITBEILEGUNG/UNIVERSALSCHLICHTUNGSSTELLE</h2>
+                <p>
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">HAFTUNG FÜR INHALTE</h2>
+                <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                </p>
+                <p class="mt-4">
+                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">HAFTUNG FÜR LINKS</h2>
+                <p>
+                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+                </p>
+                <p class="mt-4">
+                    Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-8 text-black">URHEBERRECHT</h2>
+                <p>
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                </p>
+                <p class="mt-4">
+                    Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                </p>
+
+                <p class="text-sm text-black mt-12">Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" class="text-black hover:underline" target="_blank">https://www.e-recht24.de/impressum-generator.html</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <!-- Main Footer -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-6">
+                        <img src="../bilder/elat-logo-weiss.png" alt="Elat Handels GmbH" class="h-12">
+                    </div>
+                    <p class="mb-4">
+                        Ihr zuverlässiger Partner für hochwertige Schmierstoffe. Qualität Made in Germany seit 2016.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-3">
+                        <li><a href="motoroel.html" class="hover:text-white transition-colors">PKW Motoröl</a></li>
+                        <li><a href="lkw-motoroel.html" class="hover:text-white transition-colors">LKW Motoröl</a></li>
+                        <li><a href="getriebeoel.html" class="hover:text-white transition-colors">Getriebeöl</a></li>
+                        <li><a href="hydraulikoel.html" class="hover:text-white transition-colors">Hydrauliköl</a></li>
+                        <li><a href="frostschutz.html" class="hover:text-white transition-colors">Frostschutz</a></li>
+                        <li><a href="altoelentsorgung.html" class="hover:text-white transition-colors">Altöl</a></li>
+                        <li><a href="produkte.html" class="hover:text-white transition-colors">Alle Produkte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="oelwegweiser.html" class="hover:text-white transition-colors">Ölwegweiser</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>Hörderstraße 353<br>58454 Witten<br>Deutschland</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+                            <span>+49 (0) 2306 91 29 380</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <span>info@elathandels.de</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+    <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 Elat Handels GmbH. Alle Rechte vorbehalten.</p>
+                    <div class="mt-4 md:mt-0 flex items-center gap-4">
+                        <button type="button" class="underline hover:text-white" onclick="window.ConsentManager && window.ConsentManager.open()">Cookie-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent System -->
+    <script src="js/consent-manager.js"></script>
+    <script src="js/consent-restrictions.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS animations
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 100,
+                    disable: window.innerWidth < 768 ? true : false // Disable on mobile devices
+                });
+            } else {
+                console.warn("AOS library not loaded");
+            }
+            
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('theme-toggle');
+            const darkToggleMobile = document.getElementById('theme-toggle-mobile');
+            const html = document.documentElement;
+            
+            // Check for saved user preference
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            // Set initial state
+            if (isDarkMode) {
+                html.classList.add('dark');
+                if (darkModeToggle) {
+                    darkModeToggle.querySelector('.fa-sun').classList.add('hidden');
+                    darkModeToggle.querySelector('.fa-moon').classList.remove('hidden');
+                }
+                if (darkToggleMobile) {
+                    darkToggleMobile.querySelector('.fa-sun').classList.add('hidden');
+                    darkToggleMobile.querySelector('.fa-moon').classList.remove('hidden');
+                }
+            }
+            
+            // Toggle dark mode when button is clicked
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    html.classList.toggle('dark');
+                    
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem('darkMode', isDark);
+                    
+                    // Toggle icons
+                    const sunIcon = darkModeToggle.querySelector('.fa-sun');
+                    const moonIcon = darkModeToggle.querySelector('.fa-moon');
+                    
+                    if (isDark) {
+                        sunIcon.classList.add('hidden');
+                        moonIcon.classList.remove('hidden');
+                    } else {
+                        sunIcon.classList.remove('hidden');
+                        moonIcon.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Mobile toggle for dark mode
+            if (darkToggleMobile) {
+                darkToggleMobile.addEventListener('click', () => {
+                    html.classList.toggle('dark');
+                    
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem('darkMode', isDark);
+                    
+                    // Toggle icons
+                    const sunIcon = darkToggleMobile.querySelector('.fa-sun');
+                    const moonIcon = darkToggleMobile.querySelector('.fa-moon');
+                    
+                    if (isDark) {
+                        sunIcon.classList.add('hidden');
+                        moonIcon.classList.remove('hidden');
+                    } else {
+                        sunIcon.classList.remove('hidden');
+                        moonIcon.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Scroll to Top Button wurde entfernt
+            
+            // Add scrolled class to navbar for shadow effect
+            const navbar = document.querySelector('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Close mobile menu when clicking a link (toggle is handled globally in js/main.js)
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('#mobile-menu a');
+            if (mobileMenu && menuToggle && mobileLinks.length) {
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        // reset icon to burger
+                        menuToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    });
+                });
+            }
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false
+            });
+        });
+    </script>
+    
+    <!-- Basis-Skripte -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/scroll-effects.js">
+        // Mobile Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    // Toggle the dropdown
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        dropdown.classList.add('active');
+                    } else {
+                        content.classList.add('hidden');
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

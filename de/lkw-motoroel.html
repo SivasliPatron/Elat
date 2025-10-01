@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKW Motoröl – Grundlagen, Spezifikationen und Auswahlhilfe | Elat Handels GmbH</title>
+
+    <!-- Grundlegende Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shared-components.css">
+    
+    <!-- NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES! -->
+    <link rel="stylesheet" href="css/navigation-fix.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Premium Web-Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <!-- Cookie Consent System mit DSGVO-Optimierung -->
+    <link rel="stylesheet" href="css/consent.css">
+
+    <!-- TailwindCSS für Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'dark': '#1F2937',
+                        'darker': '#111827',
+                        'darkest': '#0F172A',
+                        'accent': {
+                            DEFAULT: '#B83232',
+                            'light': '#D25050',
+                            'dark': '#8A2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 antialiased">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50" style="transform: none !important;">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="../bilder/Elat Logo.png" alt="Elat Handels GmbH" class="h-10">
+                </a>                <!-- Desktop Navigation -->
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-800 hover:text-accent">Startseite</a></li>
+                        <li><a href="produkte.html" class="nav-link text-gray-800 hover:text-accent">Produkte</a></li>
+                        <li class="relative dropdown-container">
+                            <a href="#" class="nav-link text-gray-800 hover:text-accent flex items-center">
+                                Produktberatung <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-200"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-car mr-3 text-accent"></i>
+                                        PKW Motoröl Info
+                                    </a>
+                                    <a href="lkw-motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-truck mr-3 text-accent"></i>
+                                        LKW Motoröl Info
+                                    </a>
+                                    <a href="getriebeoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-cogs mr-3 text-accent"></i>
+                                        Getriebeöl Info
+                                    </a>
+                                    <a href="hydraulikoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-tint mr-3 text-accent"></i>
+                                        Hydrauliköl Info
+                                    </a>
+                                    <a href="frostschutz.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-snowflake mr-3 text-accent"></i>
+                                        Frostschutz Info
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="oelwegweiser.html" class="nav-link text-gray-800 hover:text-accent">Ölwegweiser</a></li>
+                        <li><a href="altoelentsorgung.html" class="nav-link text-gray-800 hover:text-accent">Altöl</a></li>
+                        <li><a href="ueber-uns.html" class="nav-link text-gray-800 hover:text-accent">Über uns</a></li>
+                        <li>
+                            <a href="kontakt.html" class="btn-primary ml-4">
+                                Jetzt anfragen
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false" title="Menü öffnen">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Startseite</a></li>
+                    <li><a href="produkte.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Produkte</a></li>
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex items-center justify-between py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">
+                            <span>Produktberatung</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden ml-4 mt-2 space-y-1">
+                            <a href="motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-car mr-2 text-accent"></i>PKW Motoröl Info
+                            </a>
+                            <a href="lkw-motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-truck mr-2 text-accent"></i>LKW Motoröl Info
+                            </a>
+                            <a href="getriebeoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-cogs mr-2 text-accent"></i>Getriebeöl Info
+                            </a>
+                            <a href="hydraulikoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-tint mr-2 text-accent"></i>Hydrauliköl Info
+                            </a>
+                            <a href="frostschutz.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-snowflake mr-2 text-accent"></i>Frostschutz Info
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="oelwegweiser.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Ölwegweiser</a></li>
+                    <li><a href="altoelentsorgung.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Altöl</a></li>
+                    <li><a href="ueber-uns.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Über uns</a></li>
+                    <li class="pt-2 px-4">
+                        <a href="kontakt.html" class="btn-primary inline-flex items-center justify-center w-fit mx-auto">
+                            Jetzt anfragen
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-darkest to-red-900 text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center bg-accent bg-opacity-90 px-4 py-2 rounded mb-6">
+                        <i class="fas fa-truck mr-2"></i>
+                        <span class="font-medium">Ratgeber LKW / Heavy Duty</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">LKW Motoröl – Grundlagen, Spezifikationen und Auswahlhilfe</h1>
+                    <p class="text-gray-200 text-lg md:text-xl mb-6 max-w-2xl">
+                        Wissenswertes zu Nutzfahrzeug-Motorölen: Viskositäten, Spezifikationen (ACEA E, API CK-4), Low SAPS und wie Sie das passende Öl für Ihre Flotte wählen.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <a href="oelwegweiser.html" class="btn-primary inline-flex items-center">
+                            <i class="fas fa-search mr-2"></i>
+                            Ölwegweiser starten
+                        </a>
+                        <a href="produkte.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-filter backdrop-blur-lg text-white border border-white border-opacity-30 font-semibold px-6 py-3 rounded inline-flex items-center transition-all">
+                            <i class="fas fa-box-open mr-2"></i>
+                            LKW-Öle ansehen
+                        </a>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="../bilder/lkw-motoroel.png" alt="LKW Motoröl" class="w-full h-64 md:h-80 object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Was ist LKW-Motoröl? -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Was ist LKW-Motoröl?</h2>
+                    <p class="text-gray-700 mb-4">
+                        LKW- bzw. Heavy-Duty-Motoröle sind für hochbelastete Dieselaggregate in Nutzfahrzeugen, Baustellen- und Landmaschinen konzipiert. Sie sichern Schmierung unter Dauerlast, neutralisieren Ruß und saure Verbrennungsprodukte und schützen vor Verschleiß – bei langen Wechselintervallen und wechselnden Einsatzprofilen.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Stabile Viskosität und Scherstabilität unter Dauerlast</li>
+                        <li>Rußtragevermögen und Detergent-/Dispersant-Pakete</li>
+                        <li>Korrosions- und Oxidationsschutz bei hohen Temperaturen</li>
+                        <li>Kompatibilität mit Abgasnachbehandlung (DPF, SCR)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">Kurz zusammengefasst</h3>
+                    <p class="text-gray-700">Für LKW-Motoren zählen Haltbarkeit, Low-SAPS-Verträglichkeit und OEM-Freigaben. Ölwahl beeinflusst Kosten, Verfügbarkeit und Lebensdauer der Flotte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viskosität (SAE) -->
+    <section class="py-16 bg-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Viskositätsklassen nach SAE</h2>
+                <p class="text-gray-600">Typisch in Nutzfahrzeugen: 5W-30, 10W-40, 15W-40 – je nach Klima, OEM-Vorgabe und Einsatzprofil.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="industrial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6 bg-white rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">5W-30</h3>
+                        <p class="text-gray-700">Moderne Fuel-Economy-Öle für Euro 6, oft Low SAPS. Verlängerte Intervalle bei passenden Freigaben.</p>
+                    </div>
+                </div>
+                <div class="industrial-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-6 bg-white rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">10W-40</h3>
+                        <p class="text-gray-700">Bewährter Allrounder für gemischte Flotten mit robustem Schutz und guter Temperaturstabilität.</p>
+                    </div>
+                </div>
+                <div class="industrial-card" data-aos="fade-up" data-aos-delay="75">
+                    <div class="p-6 bg-white rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">15W-40</h3>
+                        <p class="text-gray-700">Klassische Wahl für ältere Aggregate, zuverlässig unter staubigen/heißen Bedingungen.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="oelwegweiser.html" class="btn-primary inline-flex items-center">
+                    <i class="fas fa-wrench mr-2"></i>
+                    Passende Viskosität finden
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spezifikationen (API/ACEA/OEM) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Spezifikationen und Freigaben</h2>
+                    <p class="text-gray-700 mb-4">Für LKW-Öle sind die folgenden Normen besonders wichtig:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>API</strong> CK-4/FA-4: Aktuelle US-Normen für Hochleistungs-Dieselmotoröle.</li>
+                        <li><strong>ACEA</strong> E6/E7/E9/E11: Europäische Standards für Heavy-Duty-Anwendungen.</li>
+                        <li><strong>OEM-Freigaben</strong> wie MB 228.x, MAN 3275/3477/3677, Volvo VDS-4.5, Scania STO: Herstelleranforderungen für Flottenbetrieb.</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">Low-SAPS-Formulierungen sind für DPF/SCR-Systeme essenziell. Achten Sie auf die genaue Freigabe Ihrer Motoren.</p>
+                </div>
+                <div class="bg-pattern-card rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-3">Tipp</h3>
+                    <p class="text-gray-700">Für gemischte Flotten lohnt ein Freigaben-Check, um die Sortenvielfalt zu reduzieren und Logistik zu vereinfachen.</p>
+                    <a href="kontakt.html" class="inline-flex items-center text-accent font-semibold mt-3">Flottenberatung anfordern <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ölarten -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Ölarten und Additivierung</h2>
+                <p class="text-gray-600">Für Nutzfahrzeuge zählen Oxidationsstabilität, TBN-Reserve und Rußtragevermögen.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-2">Mineralöl</h3>
+                    <p class="text-gray-700">Robust und bewährt, häufig für ältere Motoren und einfache Einsatzprofile.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">HC-Synthese</h3>
+                    <p class="text-gray-700">Sehr gutes Preis-/Leistungsverhältnis für moderne Heavy-Duty-Diesel.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-2">Vollsynthese</h3>
+                    <p class="text-gray-700">Maximale Stabilität bei langen Intervallen und hohen Temperaturen.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-2">Low SAPS</h3>
+                    <p class="text-gray-700">Schont Partikelfilter und Katalysatoren – essenziell für Euro 6 Flotten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wartung und Intervalle -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Wartung, Wechselintervalle und Tipps</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                        <li>Serviceintervalle nach OEM und Telematikdaten planen (Lastprofil, Kraftstoffqualität).</li>
+                        <li>Ölanalytik einsetzen (TBN, Viskosität, Verschleißmetalle) für verlängerte Intervalle.</li>
+                        <li>Nur Freigaben verwenden, die Motor/Abgasnachbehandlung explizit erlauben.</li>
+                        <li>Öl- und Kraftstofffilter turnusmäßig tauschen; Altöl gesetzeskonform entsorgen.</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                            <a href="altoelentsorgung.html" class="btn-accent inline-flex items-center">
+                            <i class="fas fa-recycle mr-2"></i>
+                            Altöl richtig entsorgen
+                        </a>
+                            <a href="kontakt.html" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded inline-flex items-center transition-colors">
+                            <i class="fas fa-headset mr-2"></i>
+                            Flottenberatung
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-pattern-card rounded-lg p-6 shadow-md">
+                        <h3 class="text-lg font-semibold mb-3">Häufige Fehler vermeiden</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Falsche SAPS-Klasse für DPF/SCR</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Mischen inkompatibler Spezifikationen</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Überzogene Wechselintervalle ohne Analytik</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Fehlende Abstimmung bei gemischten Flotten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (details) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Häufige Fragen zu LKW-Motoröl</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Kurz und praxisnah beantwortet für Fuhrparkleiter und Werkstätten.</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Was ist der Unterschied zwischen CK-4 und FA-4?</summary>
+                    <div class="pt-3 text-gray-700">FA-4 ist auf geringere HTHS-Viskosität und maximale Kraftstoffeffizienz ausgelegt (neue Motoren); CK-4 ist breiter einsetzbar und rückwärtskompatibler.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="25">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Sind lange Ölwechselintervalle sicher?</summary>
+                    <div class="pt-3 text-gray-700">Ja, wenn Freigaben, Einsatzprofil und Ölzustand (Analytik) passen. Empfohlen: regelmäßige Ölanalysen.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="50">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Low SAPS – wann notwendig?</summary>
+                    <div class="pt-3 text-gray-700">Bei DPF/SCR-Systemen zwingend. Prüfen Sie OEM-Forderungen (z. B. MB 228.51, MAN 3677, Volvo VDS-4.5).</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Sie möchten LKW-Motoröl beziehen oder Ihre Flotte optimieren?</h2>
+                <p class="text-lg text-gray-300 mb-8">Wir entwickeln Konzepte für Speditionen und Kommunen – mit passenden Freigaben und effizienten Lieferketten.</p>
+                <div class="flex flex-col sm:flex-row items-center sm:justify-center gap-4">
+                    <a href="kontakt.html" class="btn-accent inline-flex items-center w-auto self-center text-center px-8 py-4 font-semibold text-lg">
+                        Kontakt aufnehmen
+                    </a>
+                    <a href="produkte.html" class="bg-white hover:bg-gray-200 text-gray-800 px-8 py-4 rounded font-semibold text-lg text-center transition-colors inline-flex items-center justify-center w-auto self-center">
+                        <i class="fas fa-box-open mr-2"></i>
+                        LKW-Öle in der Übersicht
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <!-- Main Footer -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-6">
+                        <img src="../bilder/elat-logo-weiss.png" alt="Elat Handels GmbH" class="h-12">
+                    </div>
+                    <p class="mb-4">
+                        Ihr zuverlässiger Partner für hochwertige Schmierstoffe. Qualität Made in Germany seit 2016.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-3">
+                        <li><a href="motoroel.html" class="hover:text-white transition-colors">PKW Motoröl</a></li>
+                        <li><a href="lkw-motoroel.html" class="hover:text-white transition-colors">LKW Motoröl</a></li>
+                        <li><a href="getriebeoel.html" class="hover:text-white transition-colors">Getriebeöl</a></li>
+                        <li><a href="hydraulikoel.html" class="hover:text-white transition-colors">Hydrauliköl</a></li>
+                        <li><a href="frostschutz.html" class="hover:text-white transition-colors">Frostschutz</a></li>
+                        <li><a href="altoelentsorgung.html" class="hover:text-white transition-colors">Altöl</a></li>
+                        <li><a href="produkte.html" class="hover:text-white transition-colors">Alle Produkte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="oelwegweiser.html" class="hover:text-white transition-colors">Ölwegweiser</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>Hörderstraße 353<br>58454 Witten<br>Deutschland</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+                            <span>+49 (0) 2306 91 29 380</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <span>info@elathandels.de</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 Elat Handels GmbH. Alle Rechte vorbehalten.</p>
+                    <div class="mt-4 md:mt-0 flex items-center gap-4">
+                        <button type="button" class="underline hover:text-white" onclick="window.ConsentManager && window.ConsentManager.open()">Cookie-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent System -->
+    <script src="js/consent-manager.js"></script>
+    <script src="js/consent-restrictions.js"></script>
+    
+    <!-- Basis-Skripte -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
+        });
+        // Mobile Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    // Toggle the dropdown
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        dropdown.classList.add('active');
+                    } else {
+                        content.classList.add('hidden');
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

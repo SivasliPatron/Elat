@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frostschutz & Kühlmittel – Grundlagen, Typen und Mischungsverhältnisse | Elat Handels GmbH</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shared-components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES! -->
+    <link rel="stylesheet" href="css/navigation-fix.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS -->
+        <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <!-- Cookie Consent System mit DSGVO-Optimierung -->
+    <link rel="stylesheet" href="css/consent.css">
+
+    <!-- TailwindCSS für Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'dark': '#1F2937',
+                        'darker': '#111827',
+                        'darkest': '#0F172A',
+                        'accent': { DEFAULT: '#B83232', light: '#D25050', dark: '#8A2626' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50" style="transform: none !important;">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="../bilder/Elat Logo.png" alt="Elat Handels GmbH" class="h-10">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-800 hover:text-accent">Startseite</a></li>
+                        <li><a href="produkte.html" class="nav-link text-gray-800 hover:text-accent">Produkte</a></li>
+                        <li class="relative dropdown-container">
+                            <a href="#" class="nav-link text-gray-800 hover:text-accent flex items-center">
+                                Produktberatung <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-200"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-car mr-3 text-accent"></i>
+                                        PKW Motoröl Info
+                                    </a>
+                                    <a href="lkw-motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-truck mr-3 text-accent"></i>
+                                        LKW Motoröl Info
+                                    </a>
+                                    <a href="getriebeoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-cogs mr-3 text-accent"></i>
+                                        Getriebeöl Info
+                                    </a>
+                                    <a href="hydraulikoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-tint mr-3 text-accent"></i>
+                                        Hydrauliköl Info
+                                    </a>
+                                    <a href="frostschutz.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-snowflake mr-3 text-accent"></i>
+                                        Frostschutz Info
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="oelwegweiser.html" class="nav-link text-gray-800 hover:text-accent">Ölwegweiser</a></li>
+                        <li><a href="altoelentsorgung.html" class="nav-link text-gray-800 hover:text-accent">Altöl</a></li>
+                        <li><a href="ueber-uns.html" class="nav-link text-gray-800 hover:text-accent">Über uns</a></li>
+                        <li>
+                            <a href="kontakt.html" class="btn-primary ml-4">Jetzt anfragen</a>
+                        </li>
+                    </ul>
+                </nav>
+                    <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false" title="Menü öffnen">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Startseite</a></li>
+                    <li><a href="produkte.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Produkte</a></li>
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex items-center justify-between py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">
+                            <span>Produktberatung</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden ml-4 mt-2 space-y-1">
+                            <a href="motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-car mr-2 text-accent"></i>PKW Motoröl Info
+                            </a>
+                            <a href="lkw-motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-truck mr-2 text-accent"></i>LKW Motoröl Info
+                            </a>
+                            <a href="getriebeoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-cogs mr-2 text-accent"></i>Getriebeöl Info
+                            </a>
+                            <a href="hydraulikoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-tint mr-2 text-accent"></i>Hydrauliköl Info
+                            </a>
+                            <a href="frostschutz.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-snowflake mr-2 text-accent"></i>Frostschutz Info
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="oelwegweiser.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Ölwegweiser</a></li>
+                    <li><a href="altoelentsorgung.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Altöl</a></li>
+                    <li><a href="ueber-uns.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Über uns</a></li>
+                    <li class="pt-2 px-4">
+                        <a href="kontakt.html" class="btn-primary inline-flex items-center justify-center w-fit mx-auto">Jetzt anfragen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-darkest to-red-900 text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center bg-accent bg-opacity-90 px-4 py-2 rounded mb-6">
+                        <i class="fas fa-snowflake mr-2"></i>
+                        <span class="font-medium">Ratgeber</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Frostschutz & Kühlmittel – Grundlagen und Auswahl</h1>
+                    <p class="text-gray-200 text-lg md:text-xl mb-6 max-w-2xl">
+                        Wie Frostschutz wirkt, welche Typen (G11–G13) es gibt, wie Sie richtig mischen und welche Wasserqualität wichtig ist.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <a href="produkte.html" class="btn-primary inline-flex items-center">
+                            <i class="fas fa-box-open mr-2"></i>
+                            Frostschutz-Produkte ansehen
+                        </a>
+                        <a href="kontakt.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-filter backdrop-blur-lg text-white border border-white border-opacity-30 font-semibold px-6 py-3 rounded inline-flex items-center transition-all">
+                            <i class="fas fa-headset mr-2"></i>
+                            Beratung erhalten
+                        </a>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="../bilder/Frostschutz.png" alt="Frostschutz" class="w-full h-64 md:h-80 object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Was ist Frostschutz? -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Was ist Frostschutz/Kühlmittel?</h2>
+                    <p class="text-gray-700 mb-4">
+                        Frostschutz (Kühlmittelkonzentrat) basiert meist auf Ethylenglykol oder Propylenglykol und wird mit Wasser gemischt. Es schützt das Kühlsystem vor Einfrieren, Überhitzung und Korrosion – dank Inhibitoren, die Metalle wie Aluminium, Stahl, Kupfer und Lötmetalle schützen.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Frostschutz bis −35 °C (typisch 50:50 Mischung)</li>
+                        <li>Überhitzungsschutz durch Anhebung des Siedepunkts</li>
+                        <li>Korrosionsschutz über Inhibitor-Pakete</li>
+                        <li>Kavitation- und Schaumschutz</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">Kurz gefasst</h3>
+                    <p class="text-gray-700">Typ und Freigabe müssen zum Fahrzeug/OEM passen. Niemals unterschiedliche Typen ohne Freigabe mischen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typen & Spezifikationen -->
+    <section class="py-16 bg-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Typen und Spezifikationen</h2>
+                <p class="text-gray-600">IAT, OAT, HOAT: Inhibitor-Technologien und OEM-Freigaben im Überblick.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-2">IAT (G11)</h3>
+                    <p class="text-gray-700">Silikatbasiert, ältere Fahrzeuge. Gute Sofortschutzwirkung, geringere Standzeit.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">OAT (G12/G12+)</h3>
+                    <p class="text-gray-700">Organische Säuren, lange Standzeiten, aluminiumfreundlich. Mischbarkeit beachten.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-2">HOAT (G12++, G13)</h3>
+                    <p class="text-gray-700">Hybrid-Technologie (organisch + Silikate). Moderne OEM-Freigaben (z. B. VW TL 774-F/-G).</p>
+                </div>
+            </div>
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-2">Wichtige OEM-Freigaben</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>VW TL 774 (G11–G13)</li>
+                        <li>MB 325.x, BMW N 600 69.0</li>
+                        <li>MAN 324, Ford/Volvo/GM Spezifikationen</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="125">
+                    <h3 class="text-lg font-semibold mb-2">Wasserqualität</h3>
+                    <p class="text-gray-700">Verwenden Sie demineralisiertes/entsalztes Wasser (Härte, Chlorid, Sulfat niedrig). Leitungswasser kann Ablagerungen/Korrosion fördern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mischungsverhältnisse & Gefrierpunkt -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Mischungsverhältnisse & Gefrierpunkt</h2>
+                    <p class="text-gray-700 mb-4">Richtwerte (Ethylenglykol):</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>40:60 (Konzentrat:Wasser) ≈ −25 °C</li>
+                        <li>50:50 ≈ −35 °C (Standard)</li>
+                        <li>60:40 ≈ −55 °C (nicht weiter erhöhen – schlechtere Wärmeabfuhr)</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">Mischen Sie nie unterschiedliche Technologien ohne Freigabe. Nachfüllen nur mit passendem Typ oder fertiger Mischung.</p>
+                </div>
+                <div class="bg-pattern-card rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-3">Wartung & Wechsel</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Wechselintervalle gemäß OEM (oft 3–5 Jahre)</li>
+                        <li>Dichtigkeit prüfen (Schläuche, Klemmen, Wasserpumpe)</li>
+                        <li>Frostschutz- und pH-Wert testen</li>
+                        <li>Systeme fachgerecht entlüften</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Häufige Fragen zu Frostschutz</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Kurz und praxisnah beantwortet.</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Kann ich G11 mit G12/G13 mischen?</summary>
+                    <div class="pt-3 text-gray-700">Nicht empfohlen. Unterschiedliche Inhibitor-Technologien können sich gegenseitig aufheben. Nur mischen, wenn der OEM dies explizit erlaubt.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="25">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Konzentrat oder Fertigmischung?</summary>
+                    <div class="pt-3 text-gray-700">Konzentrat bietet Flexibilität, erfordert aber korrektes Mischen mit demineralisiertem Wasser. Fertigmischungen sind bequem und sicher in der Anwendung.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="50">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Propylenglykol vs. Ethylenglykol?</summary>
+                    <div class="pt-3 text-gray-700">Propylenglykol ist weniger toxisch, hat aber andere Wärmeleitfähigkeit/ Viskosität. Nur verwenden, wenn OEM freigibt.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Sie brauchen den passenden Frostschutz?</h2>
+                <p class="text-lg text-gray-300 mb-8">Wir unterstützen bei Auswahl und OEM-Freigaben – für optimalen Korrosions- und Frostschutz.</p>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-4">
+                    <a href="kontakt.html" class="btn-accent inline-flex items-center w-auto self-center text-center px-8 py-4 font-semibold text-lg">Kontakt aufnehmen</a>
+                    <a href="produkte.html" class="bg-white hover:bg-gray-200 text-gray-800 px-8 py-4 rounded font-semibold text-lg text-center transition-colors inline-flex items-center justify-center w-auto self-center">
+                        <i class="fas fa-box-open mr-2"></i>
+                        Frostschutz ansehen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="mb-6">
+                        <img src="../bilder/elat-logo-weiss.png" alt="Elat Handels GmbH" class="h-12">
+                    </div>
+                    <p class="mb-4">Ihr zuverlässiger Partner für hochwertige Schmierstoffe. Qualität Made in Germany seit 2016.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-3">
+                        <li><a href="motoroel.html" class="hover:text-white transition-colors">PKW Motoröl</a></li>
+                        <li><a href="lkw-motoroel.html" class="hover:text-white transition-colors">LKW Motoröl</a></li>
+                        <li><a href="getriebeoel.html" class="hover:text-white transition-colors">Getriebeöl</a></li>
+                        <li><a href="hydraulikoel.html" class="hover:text-white transition-colors">Hydrauliköl</a></li>
+                        <li><a href="frostschutz.html" class="hover:text-white transition-colors">Frostschutz</a></li>
+                        <li><a href="altoelentsorgung.html" class="hover:text-white transition-colors">Altöl</a></li>
+                        <li><a href="produkte.html" class="hover:text-white transition-colors">Alle Produkte</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="oelwegweiser.html" class="hover:text-white transition-colors">Ölwegweiser</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i><span>Hörderstraße 353<br>58454 Witten<br>Deutschland</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3 text-accent"></i><span>+49 (0) 2306 91 29 380</span></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-accent"></i><span>info@elathandels.de</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 Elat Handels GmbH. Alle Rechte vorbehalten.</p>
+                    <div class="mt-4 md:mt-0 flex items-center gap-4">
+                        <button type="button" class="underline hover:text-white" onclick="window.ConsentManager && window.ConsentManager.open()">Cookie-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent System -->
+    <script src="js/consent-manager.js"></script>
+    <script src="js/consent-restrictions.js"></script>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
+        });
+        // Mobile Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    // Toggle the dropdown
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        dropdown.classList.add('active');
+                    } else {
+                        content.classList.add('hidden');
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

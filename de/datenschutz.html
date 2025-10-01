@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Elat Handels GmbH</title>
+    
+    <!-- Grundlegende Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shared-components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/datenschutz.css">
+    <link rel="stylesheet" href="css/consent.css">
+    
+    <!-- NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES! -->
+    <link rel="stylesheet" href="css/navigation-fix.css">
+    
+    <!-- Premium Web-Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    
+    <!-- SEO + DSGVO Optimierung -->
+    <script src="js/seo-dsgvo-config.js"></script>
+    
+    <!-- TailwindCSS für Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'dark': '#1F2937',
+                        'darker': '#111827',
+                        'darkest': '#0F172A',
+                        'accent': {
+                            DEFAULT: '#B83232',
+                            'light': '#D25050',
+                            'dark': '#8A2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-black transition-colors duration-300">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50" style="transform: none !important;">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="../bilder/Elat Logo.png" alt="Elat Handels GmbH" class="h-10">
+                </a>                <!-- Desktop Navigation -->
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-800 hover:text-accent">Startseite</a></li>
+                        <li><a href="produkte.html" class="nav-link text-gray-800 hover:text-accent">Produkte</a></li>
+                        <li class="relative dropdown-container">
+                            <a href="#" class="nav-link text-gray-800 hover:text-accent flex items-center">
+                                Produktberatung <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-200"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-car mr-3 text-accent"></i>
+                                        PKW Motoröl Info
+                                    </a>
+                                    <a href="lkw-motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-truck mr-3 text-accent"></i>
+                                        LKW Motoröl Info
+                                    </a>
+                                    <a href="getriebeoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-cogs mr-3 text-accent"></i>
+                                        Getriebeöl Info
+                                    </a>
+                                    <a href="hydraulikoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-tint mr-3 text-accent"></i>
+                                        Hydrauliköl Info
+                                    </a>
+                                    <a href="frostschutz.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-snowflake mr-3 text-accent"></i>
+                                        Frostschutz Info
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="oelwegweiser.html" class="nav-link text-gray-800 hover:text-accent">Ölwegweiser</a></li>
+                        <li><a href="altoelentsorgung.html" class="nav-link text-gray-800 hover:text-accent">Altöl</a></li>
+                        <li><a href="ueber-uns.html" class="nav-link text-gray-800 hover:text-accent">Über uns</a></li>
+                        <li>
+                            <a href="kontakt.html" class="btn-primary ml-4">
+                                Jetzt anfragen
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false" title="Menü öffnen">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Startseite</a></li>
+                    <li><a href="produkte.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Produkte</a></li>
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex items-center justify-between py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">
+                            <span>Produktberatung</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden ml-4 mt-2 space-y-1">
+                            <a href="motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-car mr-2 text-accent"></i>PKW Motoröl Info
+                            </a>
+                            <a href="lkw-motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-truck mr-2 text-accent"></i>LKW Motoröl Info
+                            </a>
+                            <a href="getriebeoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-cogs mr-2 text-accent"></i>Getriebeöl Info
+                            </a>
+                            <a href="hydraulikoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-tint mr-2 text-accent"></i>Hydrauliköl Info
+                            </a>
+                            <a href="frostschutz.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-snowflake mr-2 text-accent"></i>Frostschutz Info
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="oelwegweiser.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Ölwegweiser</a></li>
+                    <li><a href="altoelentsorgung.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Altöl</a></li>
+                    <li><a href="ueber-uns.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Über uns</a></li>
+                    <li class="pt-2 px-4">
+                        <a href="kontakt.html" class="btn-primary inline-flex items-center justify-center w-fit mx-auto">
+                            Jetzt anfragen
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Title section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3 text-black">Datenschutzerklärung</h1>
+                <p class="text-xl text-gray-600">Informationen zum Schutz Ihrer persönlichen Daten</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 container mx-auto px-4">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="prose prose-lg max-w-none text-black">
+                <h2 class="text-2xl font-bold mb-4 text-black">1. DATENSCHUTZ AUF EINEN BLICK</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Allgemeine Hinweise</h3>
+                <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+
+                <h3 class="text-xl font-semibold mb-2 mt-6">Datenerfassung auf dieser Website</h3>
+                <h4 class="text-lg font-semibold mb-2">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+                <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.</p>
+
+                <h4 class="text-lg font-semibold mb-2">Wie erfassen wir Ihre Daten?</h4>
+                <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+
+                <h4 class="text-lg font-semibold mb-2">Wofür nutzen wir Ihre Daten?</h4>
+                <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+
+                <h4 class="text-lg font-semibold mb-2">Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
+                <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">2. HOSTING UND CONTENT DELIVERY NETWORKS (CDN)</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Externes Hosting</h3>
+                <p>Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
+                <p>Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
+                <p>Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Wir setzen folgenden Hoster ein:</h4>
+                <p>
+                    <strong>Anschrift</strong><br>
+                    Host Europe GmbH<br>
+                    Hansestrasse 111<br>
+                    51149 Köln
+                </p>
+                <p>
+                    <strong>Geschäftsführer</strong><br>
+                    Dr. Christian Koch<br>
+                    Tim Montag<br>
+                    Jonathan Wong
+                </p>
+                <p>
+                    <strong>Kontakt</strong><br>
+                    Telefon: +49 221 99999 301<br>
+                    Telefax: +49 221 99999 350<br>
+                    E-Mail: info@hosteurope.de
+                </p>
+                <p>
+                    <strong>Registereintrag und Umsatzsteuer-ID</strong><br>
+                    Registergericht: Amtsgericht Köln<br>
+                    Registernummer: HRB 28495<br>
+                    Umsatzsteuer-ID: DE187370678
+                </p>
+                <p>
+                    <strong>Jugendschutzbeauftragter</strong><br>
+                    Alexander Schaefer<br>
+                    E-Mail: jugendschutz@hosteurope.de
+                </p>
+                
+                <h4 class="text-lg font-semibold mb-2">Abschluss eines Vertrages über Auftragsverarbeitung</h4>
+                <p>Um die datenschutzkonforme Verarbeitung zu gewährleisten, haben wir einen Vertrag über Auftragsverarbeitung mit unserem Hoster geschlossen.</p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">3. ALLGEMEINE HINWEISE UND PFLICHTINFORMATIONEN</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Datenschutz</h3>
+                <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+                <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Hinweis zur verantwortlichen Stelle</h3>
+                <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                <p>
+                    Elat Handels GmbH<br>
+                    Hörderstraße 353<br>
+                    58454 Witten
+                </p>
+                <p>
+                    Telefon: +49 (0) 230 69 12 93 80<br>
+                    E-Mail: info@elathandels.de
+                </p>
+                <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. ä.) entscheidet.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Speicherdauer</h3>
+                <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keinen anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+                <p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>
+                <p class="uppercase font-semibold">WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p>
+                <p class="uppercase font-semibold mt-4">WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+                <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Recht auf Datenübertragbarkeit</h3>
+                <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">SSL- bzw. TLS-Verschlüsselung</h3>
+                <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+                <p>Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Auskunft, Löschung und Berichtigung</h3>
+                <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Recht auf Einschränkung der Verarbeitung</h3>
+                <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                    <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.</li>
+                    <li>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                    <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li>
+                </ul>
+                <p class="mt-4">Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+                
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">4. DATENERFASSUNG AUF DIESER WEBSITE</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Kontaktformular und E-Mail-Anfragen</h3>
+                <p>Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden die von Ihnen mitgeteilten Daten (Ihre E-Mail-Adresse, ggf. Ihr Name und Ihre Telefonnummer) von uns gespeichert, um Ihre Fragen zu beantworten.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Verarbeitete Daten</h4>
+                <p>Je nach Art der Kontaktaufnahme verarbeiten wir folgende Kategorien personenbezogener Daten:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>Name</strong> (falls angegeben)</li>
+                    <li><strong>E-Mail-Adresse</strong> (erforderlich)</li>
+                    <li><strong>Telefonnummer</strong> (optional)</li>
+                    <li><strong>Firmenname</strong> (optional)</li>
+                    <li><strong>Nachrichteninhalt</strong> (Ihr Anliegen)</li>
+                    <li><strong>Produktinteresse</strong> (falls spezifiziert)</li>
+                    <li><strong>IP-Adresse</strong> (automatisch erfasst)</li>
+                    <li><strong>Zeitstempel</strong> der Anfrage</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Zweck der Verarbeitung</h4>
+                <p>Ihre Daten werden ausschließlich für folgende Zwecke verarbeitet:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Bearbeitung und Beantwortung Ihrer Anfrage</li>
+                    <li>Bereitstellung angeforderter Informationen</li>
+                    <li>Erstellung von Angeboten oder Kostenvoranschlägen</li>
+                    <li>Nachfassen bei offenen Fragen</li>
+                    <li>Dokumentation der Geschäftskommunikation</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Rechtsgrundlage</h4>
+                <p>Die Verarbeitung der Daten erfolgt auf Grundlage von:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong>, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist</li>
+                    <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> in allen übrigen Fällen (berechtigtes Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen)</li>
+                    <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong>, sofern Sie eine gesonderte Einwilligung erteilt haben</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Speicherdauer</h4>
+                <p>Die Daten aus Kontaktanfragen werden wie folgt gespeichert:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>Allgemeine Anfragen:</strong> bis Sie uns zur Löschung auffordern oder Ihre Einwilligung widerrufen</li>
+                    <li><strong>Vertragsrelevante Anfragen:</strong> bis zum Wegfall des Zwecks der Datenspeicherung (z.B. nach abgeschlossener Bearbeitung)</li>
+                    <li><strong>Geschäftliche Korrespondenz:</strong> gemäß handelsrechtlichen Aufbewahrungsfristen (6-10 Jahre)</li>
+                </ul>
+                <p>Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben hiervon unberührt.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Automatische Antworten und Bestätigungen</h4>
+                <p>Nach Absenden einer Kontaktanfrage erhalten Sie automatisch eine Eingangsbestätigung per E-Mail. Diese dient der:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Bestätigung des Nachrichteneingangs</li>
+                    <li>Information über die voraussichtliche Bearbeitungszeit</li>
+                    <li>Bereitstellung einer Referenznummer für Rückfragen</li>
+                </ul>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Anfrage per Telefon</h3>
+                <p>Wenn Sie uns telefonisch kontaktieren, werden folgende Daten verarbeitet:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Ihre Telefonnummer (wird in der Telefonanlage angezeigt)</li>
+                    <li>Datum und Uhrzeit des Anrufs</li>
+                    <li>Gesprächsinhalt (soweit für die Bearbeitung erforderlich)</li>
+                    <li>Name und Kontaktdaten (soweit Sie diese mitteilen)</li>
+                </ul>
+                <p><strong>Hinweis:</strong> Telefongespräche werden nicht aufgezeichnet. Nur relevante Gesprächsinhalte werden für die Nachbearbeitung notiert.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Weitergabe von Daten</h4>
+                <p>Ihre Kontaktdaten geben wir nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter. Ausnahmen:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Gesetzliche Verpflichtung zur Herausgabe</li>
+                    <li>Beauftragte Dienstleister zur Anfragenbearbeitung (unter Auftragsverarbeitungsvertrag)</li>
+                    <li>Mit Ihrer Zustimmung für spezielle Serviceleistungen</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">5. COOKIES, LOKALER SPEICHER (LOCALSTORAGE) UND EINWILLIGUNG</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Consent-Manager</h3>
+                <p>Wir verwenden einen Consent-Manager (Cookie-Banner), um Ihre Einwilligungen in optionale Dienste zu verwalten. Ihre Auswahl wird im Browser gespeichert, damit diese Einstellungen bei späteren Besuchen erhalten bleiben.</p>
+                <p><strong>Speicherart und Schlüssel:</strong> localStorage unter dem Schlüssel "elat-cookie-consent"</p>
+                <p><strong>Gespeicherte Kategorien:</strong> necessary (immer aktiv), analytics, marketing, functional</p>
+                <p><strong>Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2 TTDSG (unbedingt erforderlich) i. V. m. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Dokumentation Ihrer Einwilligungen)</p>
+                <p><strong>Speicherdauer:</strong> max. 12 Monate (danach erneute Abfrage)</p>
+                <p>Sie können Ihre Einstellungen jederzeit mit Wirkung für die Zukunft ändern oder widerrufen. Nutzen Sie hierzu den Link Cookie-Einstellungen.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Weitere lokale Speicherung</h3>
+                <p>Zur Bereitstellung der von Ihnen gewünschten Darstellung speichern wir Ihre hell/dunkel Darstellung (Dark-Mode) lokal im Browser.</p>
+                <p><strong>Schlüssel/Wert:</strong> localStorage "darkMode" = true/false</p>
+                <p><strong>Zweck:</strong> Anzeige der Website gemäß Ihrer Auswahl (Benutzerfreundlichkeit)</p>
+                <p><strong>Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2 TTDSG (unbedingt erforderlich) i. V. m. Art. 6 Abs. 1 lit. f DSGVO</p>
+                <p><strong>Speicherdauer:</strong> bis zur Löschung durch Sie bzw. beim Zurücksetzen der Website-Daten im Browser</p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">6. EXTERNE DIENSTE UND CONTENT DELIVERY NETWORKS (CDN)</h2>
+                
+                <p><strong>⚠️ Wichtiger Hinweis:</strong> Zur Darstellung dieser Website werden teilweise Inhalte von externen Anbietern geladen. Dabei wird aus technischen Gründen automatisch Ihre IP-Adresse an den jeweiligen Anbieter übermittelt. Dies erfolgt bei jedem Seitenaufruf ohne gesonderte Einwilligung.</p>
+                
+                <h3 class="text-xl font-semibold mb-2">Google Fonts</h3>
+                <p><strong>Anbieter:</strong> Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland</p>
+                <p><strong>Zweck:</strong> Einheitliche, weboptimierte Schriftarten für bessere Lesbarkeit</p>
+                <p><strong>Übertragene Daten:</strong> IP-Adresse, angeforderte Schriftart, Browser-Informationen, Zeitstempel, Referrer</p>
+                <p><strong>Drittlandübermittlung:</strong> Möglich in die USA (Google LLC)</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher, performanter Darstellung)</p>
+                <p><strong>Garantien:</strong> Google ist EU-US Data Privacy Framework zertifiziert</p>
+                <p><strong>Datenschutz:</strong> <a href="https://policies.google.com/privacy" class="consent-link" target="_blank">https://policies.google.com/privacy</a></p>
+                <p><strong>Hinweis:</strong> Wir arbeiten an einer vollständigen lokalen Bereitstellung der Schriftarten.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Font Awesome (CDNJS/Cloudflare)</h3>
+                <p><strong>Anbieter:</strong> Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA</p>
+                <p><strong>Zweck:</strong> Darstellung von Icons und Symbolen</p>
+                <p><strong>Übertragene Daten:</strong> IP-Adresse, User-Agent, Referrer-URL, Zeitstempel, angeforderte Icon-Dateien</p>
+                <p><strong>Drittlandübermittlung:</strong> USA, aber auch EU-Server verfügbar</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an modernem Website-Design)</p>
+                <p><strong>Garantien:</strong> EU-Standardvertragsklauseln</p>
+                <p><strong>Datenschutz:</strong> <a href="https://www.cloudflare.com/privacypolicy/" class="consent-link" target="_blank">https://www.cloudflare.com/privacypolicy/</a></p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">TailwindCSS CDN</h3>
+                <p><strong>Anbieter:</strong> Tailwind Labs Inc. / jsDelivr CDN</p>
+                <p><strong>Zweck:</strong> CSS-Framework für responsive Website-Gestaltung</p>
+                <p><strong>Übertragene Daten:</strong> IP-Adresse, Browser-Informationen, geladene CSS-Konfiguration</p>
+                <p><strong>Drittlandübermittlung:</strong> Möglich, je nach CDN-Server-Standort</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an modernem, responsivem Design)</p>
+                <p><strong>Hinweis:</strong> Perspektivisch Ersetzung durch lokal bereitgestellte CSS-Dateien geplant.</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">AOS (Animate On Scroll) via UNPKG</h3>
+                <p><strong>Anbieter:</strong> UNPKG (betrieben von npm, Inc.) / Cloudflare</p>
+                <p><strong>Zweck:</strong> Scroll-Animationen für verbesserte Benutzerfreundlichkeit</p>
+                <p><strong>Übertragene Daten:</strong> IP-Adresse, User-Agent, Referrer-URL, Zeitstempel</p>
+                <p><strong>Kategorisierung:</strong> Funktionale Cookies erforderlich für Animationen</p>
+                <p><strong>Drittlandübermittlung:</strong> USA</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an ansprechender Website-Darstellung)</p>
+                <p><strong>Ihre Kontrolle:</strong> Laden der Bibliothek kann über Cookie-Einstellungen gesteuert werden</p>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Wichtige Informationen zu Drittlandübermittlungen</h3>
+                
+                <h4 class="text-lg font-semibold mb-2">Risiken und Schutzmaßnahmen</h4>
+                <p>Bei der Nutzung der oben genannten Dienste können Daten an Empfänger in Drittstaaten (insbesondere USA) übermittelt werden. Dabei bestehen folgende Risiken:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Möglicher behördlicher Zugriff durch US-Behörden</li>
+                    <li>Andere Datenschutzstandards als in der EU</li>
+                    <li>Begrenzte Durchsetzbarkeit Ihrer Betroffenenrechte</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Getroffene Schutzmaßnahmen</h4>
+                <p>Wir stützen Drittlandübermittlungen auf folgende Garantien:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>EU-US Data Privacy Framework:</strong> Google ist zertifiziert</li>
+                    <li><strong>EU-Standardvertragsklauseln:</strong> Bei anderen Anbietern</li>
+                    <li><strong>Datensparsamkeit:</strong> Nur technisch notwendige Übertragungen</li>
+                    <li><strong>Lokalisierungsstrategie:</strong> Schrittweiser Ersatz durch lokale Hosting-Lösungen</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Ihre Wahlmöglichkeiten</h4>
+                <p>Sie haben folgende Möglichkeiten:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>Browser-Einstellungen:</strong> Externe Ressourcen über Browser blockieren</li>
+                    <li><strong>Cookie-Einstellungen:</strong> Funktionale Features deaktivieren</li>
+                    <li><strong>Add-ons nutzen:</strong> Privacy-Tools für zusätzlichen Schutz</li>
+                    <li><strong>Alternative Browser:</strong> Privacy-fokussierte Browser verwenden</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Unsere Verantwortung</h4>
+                <p>Wo technisch möglich und wirtschaftlich vertretbar, stellen wir externe Ressourcen lokal bereit, um Drittlandübermittlungen zu vermeiden. Dies ist ein fortlaufender Prozess zur Verbesserung des Datenschutzes.</p>
+
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">7. KARTENDIENSTE (GOOGLE MAPS)</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Einbindung von Google Maps</h3>
+                <p>Auf unserer Kontaktseite nutzen wir den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+                <p>Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Zweck der Datenverarbeitung</h4>
+                <p>Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote und an einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Datenübermittlung in die USA</h4>
+                <p>Google ist unter dem EU-US Data Privacy Framework zertifiziert. Mehr Informationen finden Sie unter: <a href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active" class="consent-link" target="_blank">https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active</a></p>
+                
+                <h4 class="text-lg font-semibold mb-2">Ihre Rechte</h4>
+                <p>Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
+                <p>Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" class="consent-link" target="_blank">https://policies.google.com/privacy?hl=de</a></p>
+                
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">8. GOOGLE ANALYTICS (OPTIONAL)</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Umfang der Verarbeitung</h3>
+                <p>Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Google Analytics verwendet Cookies und ähnliche Technologien, um Informationen über die Benutzung der Website durch die Nutzer zu sammeln und auszuwerten.</p>
+                <p><strong>Unsere Google Analytics Measurement ID:</strong> G-C832S1PEWH</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Datensammlung nur mit Einwilligung</h4>
+                <p><strong>Wichtig:</strong> Google Analytics wird nur aktiviert, wenn Sie explizit in die Kategorie „Analytics" in unserem Cookie-Banner eingewilligt haben. Ohne Ihre Zustimmung erfolgt keine Datenübertragung an Google.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Erhobene Daten</h4>
+                <p>Folgende Daten können durch Google Analytics erhoben werden:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Anonymisierte IP-Adresse (letzte 8 Bit werden entfernt)</li>
+                    <li>Datum und Uhrzeit des Besuchs</li>
+                    <li>Besuchte Seiten und Verweildauer</li>
+                    <li>Referrer-Website (von welcher Seite Sie kamen)</li>
+                    <li>Browser und Betriebssystem</li>
+                    <li>Bildschirmauflösung</li>
+                    <li>Ungefährer Standort (nur auf Länder-/Stadtebene)</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Datenschutz-Konfiguration</h4>
+                <p>Wir haben Google Analytics datenschutzfreundlich konfiguriert:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>IP-Anonymisierung aktiviert:</strong> Ihre IP-Adresse wird vor der Übertragung gekürzt</li>
+                    <li><strong>Keine Werbefunktionen:</strong> Google Signals und Remarketing sind deaktiviert</li>
+                    <li><strong>Verkürzte Cookie-Laufzeit:</strong> 2 Jahre statt der Standard-Einstellung</li>
+                    <li><strong>Keine automatische Erfassung:</strong> Nur bewusst ausgewählte Events werden getrackt</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Zweck der Verarbeitung</h4>
+                <p>Die Analyse erfolgt zu folgenden Zwecken:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Verbesserung der Website-Usability</li>
+                    <li>Optimierung des Informationsangebots</li>
+                    <li>Technische Fehleranalyse</li>
+                    <li>Verständnis der Nutzerbedürfnisse</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Rechtsgrundlage und Speicherdauer</h4>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) i.V.m. § 25 Abs. 1 TTDSG</p>
+                <p><strong>Speicherdauer:</strong> Die Daten werden nach 26 Monaten automatisch gelöscht</p>
+                <p><strong>Datenübermittlung:</strong> Möglicherweise Übertragung in die USA; Google ist EU-US Data Privacy Framework zertifiziert</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Widerruf und Opt-out</h4>
+                <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen durch:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Anpassung der Cookie-Einstellungen über den Button im Footer</li>
+                    <li>Deaktivierung der „Analytics"-Kategorie</li>
+                    <li>Installation des Google Analytics Opt-out Browser-Add-ons: <a href="https://tools.google.com/dlpage/gaoptout" class="consent-link" target="_blank">https://tools.google.com/dlpage/gaoptout</a></li>
+                    <li>Direktes Opt-out für unsere Website: <a href="javascript:gaOptout()" class="consent-link">Google Analytics deaktivieren</a></li>
+                </ul>
+                
+                <script>
+                // Google Analytics Opt-out Funktion
+                var gaProperty = 'G-C832S1PEWH';
+                var disableStr = 'ga-disable-' + gaProperty;
+                if (document.cookie.indexOf(disableStr + '=true') > -1) {
+                    window[disableStr] = true;
+                }
+                function gaOptout() {
+                    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+                    window[disableStr] = true;
+                    
+                    // Cookie-Einstellungen auch aktualisieren
+                    if (window.ConsentManager) {
+                        window.ConsentManager.set({
+                            necessary: true,
+                            analytics: false,
+                            marketing: false,
+                            functional: window.ConsentManager.has('functional')
+                        });
+                    }
+                    
+                    // Analytics auch über unser System deaktivieren
+                    if (window.ElatAnalytics) {
+                        window.ElatAnalytics.disable();
+                    }
+                    
+                    alert('Google Analytics wurde für diese Website dauerhaft deaktiviert.');
+                    window.location.reload();
+                }
+                </script>
+                
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">9. DETAILLIERTE COOKIE-ÜBERSICHT</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Eigene Cookies (First-Party)</h3>
+                
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full border border-gray-300">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Cookie-Name</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Zweck</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Kategorie</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Laufzeit</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2"><code>elat-cookie-consent</code></td>
+                                <td class="border border-gray-300 px-4 py-2">Speichert Ihre Cookie-Einstellungen</td>
+                                <td class="border border-gray-300 px-4 py-2">Notwendig</td>
+                                <td class="border border-gray-300 px-4 py-2">90 Tage</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border border-gray-300 px-4 py-2"><code>darkMode</code> (localStorage)</td>
+                                <td class="border border-gray-300 px-4 py-2">Speichert Dark/Light Mode Präferenz</td>
+                                <td class="border border-gray-300 px-4 py-2">Funktional</td>
+                                <td class="border border-gray-300 px-4 py-2">Bis Browser-Reset</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-2 mt-6">Google Analytics Cookies (nur bei Zustimmung)</h3>
+                
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full border border-gray-300">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Cookie-Name</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Zweck</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Laufzeit</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2"><code>_ga</code></td>
+                                <td class="border border-gray-300 px-4 py-2">Unterscheidet eindeutige Nutzer</td>
+                                <td class="border border-gray-300 px-4 py-2">2 Jahre</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border border-gray-300 px-4 py-2"><code>_ga_C832S1PEWH</code></td>
+                                <td class="border border-gray-300 px-4 py-2">Speichert Session-Status für unsere Analytics-Property</td>
+                                <td class="border border-gray-300 px-4 py-2">2 Jahre</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2"><code>ga-disable-G-C832S1PEWH</code></td>
+                                <td class="border border-gray-300 px-4 py-2">Opt-out Cookie - deaktiviert Analytics für diese Website</td>
+                                <td class="border border-gray-300 px-4 py-2">Bis 2099 (permanent)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">10. SOCIAL MEDIA INTEGRATION</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Externe Social Media Links</h3>
+                <p>Unsere Website enthält Links zu unseren Social Media Profilen auf folgenden Plattformen:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>LinkedIn</strong> - Berufliches Netzwerk</li>
+                    <li><strong>Facebook</strong> - Unternehmensseite</li>
+                    <li><strong>YouTube</strong> - Videoinhalte</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Datenverarbeitung bei Klick</h4>
+                <p>Wichtig: Es werden keine Social Media Inhalte direkt eingebettet. Erst wenn Sie aktiv auf einen unserer Social Media Links klicken, werden Sie zur entsprechenden Plattform weitergeleitet. Dabei kann folgendes übertragen werden:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Referrer-Information (von welcher unserer Seiten Sie kommen)</li>
+                    <li>Ihre IP-Adresse</li>
+                    <li>Browser-Informationen</li>
+                    <li>Zeitpunkt des Klicks</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Rechtsgrundlage</h4>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Social Media Präsenz)</p>
+                <p><strong>Berechtigtes Interesse:</strong> Erreichbarkeit über verschiedene Kanäle, Kundenkommunikation, Markenaufbau</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Hinweis zu Datenschutzbestimmungen</h4>
+                <p>Sobald Sie auf einen Social Media Link klicken, gelten die Datenschutzbestimmungen der jeweiligen Plattform:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>LinkedIn: <a href="https://www.linkedin.com/legal/privacy-policy" class="consent-link" target="_blank">https://www.linkedin.com/legal/privacy-policy</a></li>
+                    <li>Facebook: <a href="https://www.facebook.com/privacy/explanation" class="consent-link" target="_blank">https://www.facebook.com/privacy/explanation</a></li>
+                    <li>YouTube/Google: <a href="https://policies.google.com/privacy" class="consent-link" target="_blank">https://policies.google.com/privacy</a></li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mb-4 mt-12 text-black">11. SERVER-LOGFILES UND TECHNISCHE DATEN</h2>
+                
+                <h3 class="text-xl font-semibold mb-2">Automatisch erfasste Informationen</h3>
+                <p>Der Hoster dieser Website verarbeitet automatisiert Server-Logfiles bei jedem Zugriff auf unsere Website. Diese Datenerfassung ist technisch notwendig für die Bereitstellung der Website.</p>
+                
+                <h4 class="text-lg font-semibold mb-2">Erfasste Daten im Detail</h4>
+                <ul class="list-disc pl-5 mt-2">
+                    <li><strong>IP-Adresse</strong> des zugreifenden Rechners</li>
+                    <li><strong>Datum und Uhrzeit</strong> der Anfrage</li>
+                    <li><strong>Zeitzonendifferenz</strong> zur Greenwich Mean Time (GMT)</li>
+                    <li><strong>Request-URL</strong> (angeforderte Seite/Datei)</li>
+                    <li><strong>HTTP-Statuscode</strong> (Erfolg/Fehlerstatus)</li>
+                    <li><strong>Referrer-URL</strong> (Seite, von der Sie kamen)</li>
+                    <li><strong>Browsertyp und -version</strong></li>
+                    <li><strong>Betriebssystem</strong> des zugreifenden Systems</li>
+                    <li><strong>Internet Service Provider</strong> des zugreifenden Systems</li>
+                    <li><strong>Übertragene Datenmenge</strong></li>
+                    <li><strong>Fehlermeldungen</strong> bei Verbindungsproblemen</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Zweck der Verarbeitung</h4>
+                <p>Die Verarbeitung erfolgt zu folgenden Zwecken:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>Sicherstellung des technischen Betriebs der Website</li>
+                    <li>Gewährleistung der IT-Sicherheit</li>
+                    <li>Aufklärung von Missbrauchs- oder Betrugshandlungen</li>
+                    <li>Fehleranalyse und technische Optimierung</li>
+                    <li>Lastverteilung und Performance-Optimierung</li>
+                </ul>
+                
+                <h4 class="text-lg font-semibold mb-2">Rechtsgrundlage und Aufbewahrung</h4>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Stabilität und Sicherheit des Angebots)</p>
+                <p><strong>Berechtigtes Interesse:</strong> Aufrechterhaltung des Webservice, Schutz vor Cyberangriffen, technische Optimierung</p>
+                <p><strong>Reguläre Speicherdauer:</strong> maximal 14 Tage</p>
+                <p><strong>Ausnahmen:</strong> Bei sicherheitsrelevanten Vorfällen (Hack-Versuche, DDoS-Angriffe) können Logs zur Beweissicherung länger gespeichert werden</p>
+                <p><strong>Empfänger:</strong> Host Europe GmbH (siehe Abschnitt „Externes Hosting")</p>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <!-- Main Footer -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-6">
+                        <img src="../bilder/elat-logo-weiss.png" alt="Elat Handels GmbH" class="h-12">
+                    </div>
+                    <p class="mb-4">
+                        Ihr zuverlässiger Partner für hochwertige Schmierstoffe. Qualität Made in Germany seit 2016.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-gray-700 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-3">
+                        <li><a href="motoroel.html" class="hover:text-white transition-colors">PKW Motoröl</a></li>
+                        <li><a href="lkw-motoroel.html" class="hover:text-white transition-colors">LKW Motoröl</a></li>
+                        <li><a href="getriebeoel.html" class="hover:text-white transition-colors">Getriebeöl</a></li>
+                        <li><a href="hydraulikoel.html" class="hover:text-white transition-colors">Hydrauliköl</a></li>
+                        <li><a href="frostschutz.html" class="hover:text-white transition-colors">Frostschutz</a></li>
+                        <li><a href="altoelentsorgung.html" class="hover:text-white transition-colors">Altöl</a></li>
+                        <li><a href="produkte.html" class="hover:text-white transition-colors">Alle Produkte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="oelwegweiser.html" class="hover:text-white transition-colors">Ölwegweiser</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>Hörderstraße 353<br>58454 Witten<br>Deutschland</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+                            <span>+49 (0) 2306 91 29 380</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <span>info@elathandels.de</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+    <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 Elat Handels GmbH. Alle Rechte vorbehalten.</p>
+                    <div class="mt-4 md:mt-0 flex items-center gap-4">
+                        <button type="button" class="underline hover:text-white" onclick="window.ConsentManager && window.ConsentManager.open()">Cookie-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <!-- 1. Basis-Skripte (müssen zuerst laden) -->
+    <script src="js/main.js"></script>
+    
+    <!-- 2. Consent Manager (MUSS vor allen anderen consent-abhängigen Scripten laden) -->
+    <script src="js/consent-manager.js"></script>
+    
+    <!-- 3. DSGVO-konformes Analytics (hängt von ConsentManager ab) -->
+    <script src="js/dsgvo-analytics.js"></script>
+    
+    <!-- 4. AOS Library - nur bei functional consent (durch ConsentManager gesteuert) -->
+    <script data-consent="functional" data-src="https://unpkg.com/aos@next/dist/aos.js" data-timeout="5000"></script>
+    
+    <!-- 5. Weitere Effekte und seitenspezifische Scripte -->
+    <script src="js/scroll-effects.js"></script>
+    <script src="js/datenschutz-inline.js"></script>
+    
+    <script>
+      // Enhanced AOS integration that waits for ConsentManager and proper script loading
+      (function(){
+        let aosInitialized = false;
+        
+        function initAOSWhenReady() {
+          if (aosInitialized) return; // Prevent double initialization
+          
+          if (window.AOS && AOS.init) {
+            AOS.init({
+              duration: 600,
+              easing: 'ease-out-cubic',
+              once: true,
+              offset: 50
+            });
+            aosInitialized = true;
+            console.log('✅ AOS initialized from datenschutz.html inline script');
+          } else {
+            console.log('⏳ AOS not ready yet...');
+          }
+        }
+        
+        // Listen for AOS script load events from consent manager
+        document.addEventListener('consent-script-loaded', function(e) {
+          if (e.detail.src && e.detail.src.includes('aos') && e.detail.success) {
+            console.log('📦 AOS script loaded successfully via consent manager');
+            setTimeout(initAOSWhenReady, 100);
+          } else if (e.detail.src && e.detail.src.includes('aos') && !e.detail.success) {
+            console.warn('❌ AOS script failed to load:', e.detail.error);
+          }
+        });
+        
+        // Fallback: Check if functional consent is already granted (for returning users)
+        function checkInitialConsent() {
+          if (window.ConsentManager && window.ConsentManager.has('functional')) {
+            console.log('🔄 Functional consent already granted, checking AOS...');
+            // Poll for AOS availability (for case where script loaded before this code)
+            let attempts = 0;
+            const pollAOS = setInterval(function(){
+              attempts++;
+              if (window.AOS && AOS.init) {
+                clearInterval(pollAOS);
+                initAOSWhenReady();
+              } else if (attempts > 30) { // 3 seconds timeout
+                clearInterval(pollAOS);
+                console.log('⏰ AOS polling timeout, animations disabled');
+              }
+            }, 100);
+          } else {
+            console.log('🔒 Functional consent not granted, AOS will not initialize');
+          }
+        }
+        
+        // Wait for ConsentManager to be ready
+        function waitForConsentManager() {
+          if (window.ConsentManager) {
+            // ConsentManager is ready, set up consent change listener
+            window.ConsentManager.onChange(function(prefs){
+              if (prefs.functional && !aosInitialized) {
+                console.log('✅ Functional consent granted, waiting for AOS script...');
+                // AOS script will be loaded by consent manager, wait for it
+                setTimeout(function(){
+                  let checkCount = 0;
+                  const checkAOS = setInterval(function(){
+                    checkCount++;
+                    if (window.AOS && AOS.init) {
+                      clearInterval(checkAOS);
+                      initAOSWhenReady();
+                    } else if (checkCount > 20) { // 2 seconds timeout
+                      clearInterval(checkAOS);
+                      console.log('⏰ AOS check timeout after consent change');
+                    }
+                  }, 100);
+                }, 200);
+              }
+            });
+            
+            // Check initial state
+            checkInitialConsent();
+          } else {
+            // ConsentManager not ready yet, retry
+            setTimeout(waitForConsentManager, 50);
+          }
+        }
+        
+        // Start the process when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', waitForConsentManager);
+        } else {
+          waitForConsentManager();
+        }
+        
+        // Analytics integration example (already handled by dsgvo-analytics.js)
+        console.log('📊 Datenschutz page analytics integration ready');
+      })();
+    </script>
+</body>
+</html>

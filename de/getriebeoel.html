@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getriebeöl – Arten, Spezifikationen und Auswahlhilfe | Elat Handels GmbH</title>
+
+    <!-- Grundlegende Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shared-components.css">
+    
+    <!-- NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES! -->
+    <link rel="stylesheet" href="css/navigation-fix.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Premium Web-Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <!-- Cookie Consent System mit DSGVO-Optimierung -->
+    <link rel="stylesheet" href="css/consent.css">
+
+    <!-- TailwindCSS für Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'dark': '#1F2937',
+                        'darker': '#111827',
+                        'darkest': '#0F172A',
+                        'accent': {
+                            DEFAULT: '#B83232',
+                            'light': '#D25050',
+                            'dark': '#8A2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 antialiased">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50" style="transform: none !important;">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="../bilder/Elat Logo.png" alt="Elat Handels GmbH" class="h-10">
+                </a>                <!-- Desktop Navigation -->
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-800 hover:text-accent">Startseite</a></li>
+                        <li><a href="produkte.html" class="nav-link text-gray-800 hover:text-accent">Produkte</a></li>
+                        <li class="relative dropdown-container">
+                            <a href="#" class="nav-link text-gray-800 hover:text-accent flex items-center">
+                                Produktberatung <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-200"></i>
+                            </a>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible transform translate-y-2 transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-car mr-3 text-accent"></i>
+                                        PKW Motoröl Info
+                                    </a>
+                                    <a href="lkw-motoroel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-truck mr-3 text-accent"></i>
+                                        LKW Motoröl Info
+                                    </a>
+                                    <a href="getriebeoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-cogs mr-3 text-accent"></i>
+                                        Getriebeöl Info
+                                    </a>
+                                    <a href="hydraulikoel.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-tint mr-3 text-accent"></i>
+                                        Hydrauliköl Info
+                                    </a>
+                                    <a href="frostschutz.html" class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                                        <i class="fas fa-snowflake mr-3 text-accent"></i>
+                                        Frostschutz Info
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="oelwegweiser.html" class="nav-link text-gray-800 hover:text-accent">Ölwegweiser</a></li>
+                        <li><a href="altoelentsorgung.html" class="nav-link text-gray-800 hover:text-accent">Altöl</a></li>
+                        <li><a href="ueber-uns.html" class="nav-link text-gray-800 hover:text-accent">Über uns</a></li>
+                        <li>
+                            <a href="kontakt.html" class="btn-primary ml-4">
+                                Jetzt anfragen
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden text-gray-800 focus:outline-none" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false" title="Menü öffnen">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Startseite</a></li>
+                    <li><a href="produkte.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Produkte</a></li>
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex items-center justify-between py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">
+                            <span>Produktberatung</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden ml-4 mt-2 space-y-1">
+                            <a href="motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-car mr-2 text-accent"></i>PKW Motoröl Info
+                            </a>
+                            <a href="lkw-motoroel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-truck mr-2 text-accent"></i>LKW Motoröl Info
+                            </a>
+                            <a href="getriebeoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-cogs mr-2 text-accent"></i>Getriebeöl Info
+                            </a>
+                            <a href="hydraulikoel.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-tint mr-2 text-accent"></i>Hydrauliköl Info
+                            </a>
+                            <a href="frostschutz.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded text-sm">
+                                <i class="fas fa-snowflake mr-2 text-accent"></i>Frostschutz Info
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="oelwegweiser.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Ölwegweiser</a></li>
+                    <li><a href="altoelentsorgung.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Altöl</a></li>
+                    <li><a href="ueber-uns.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Über uns</a></li>
+                    <li class="pt-2 px-4">
+                        <a href="kontakt.html" class="btn-primary inline-flex items-center justify-center w-fit mx-auto">
+                            Jetzt anfragen
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-darkest to-red-900 text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center bg-accent bg-opacity-90 px-4 py-2 rounded mb-6">
+                        <i class="fas fa-gears mr-2"></i>
+                        <span class="font-medium">Ratgeber</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Getriebeöl – Arten, Spezifikationen und Auswahlhilfe</h1>
+                    <p class="text-gray-200 text-lg md:text-xl mb-6 max-w-2xl">
+                        Alles Wichtige zu Schalt-, Automatik-, CVT- und Doppelkupplungsgetrieben: Spezifikationen, Viskositäten und worauf Sie bei der Auswahl achten sollten.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <a href="oelwegweiser.html" class="btn-primary inline-flex items-center">
+                            <i class="fas fa-search mr-2"></i>
+                            Ölwegweiser starten
+                        </a>
+                        <a href="produkte.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-filter backdrop-blur-lg text-white border border-white border-opacity-30 font-semibold px-6 py-3 rounded inline-flex items-center transition-all">
+                            <i class="fas fa-box-open mr-2"></i>
+                            Getriebeöle ansehen
+                        </a>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="../bilder/getriebeoel.png" alt="Getriebeöl" class="w-full h-64 md:h-80 object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Was ist Getriebeöl? -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Was ist Getriebeöl?</h2>
+                    <p class="text-gray-700 mb-4">
+                        Getriebeöl schmiert Zahnräder, Lager und Synchronringe, dämpft Stöße, führt Wärme ab und schützt vor Verschleiß und Korrosion. Je nach Getriebeart (Schaltgetriebe, Automatik, CVT, DSG/DCT) sind Formulierungen und Spezifikationen sehr unterschiedlich.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Stabile Schmierfilme unter hohem Druck (EP-Additive)</li>
+                        <li>Thermische und oxidative Stabilität</li>
+                        <li>Kompatibilität mit Reibpaarungen (Kupplungen, Synchronkörper)</li>
+                        <li>Kältefließeigenschaften und Schaltkomfort</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">Kurz zusammengefasst</h3>
+                    <p class="text-gray-700">Getriebe sind sensibel auf falsche Reibwerte. Verwenden Sie exakt die vom Hersteller geforderte Spezifikation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getriebearten -->
+    <section class="py-16 bg-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Getriebearten und typische Öle</h2>
+                <p class="text-gray-600">Jede Getriebeart erfordert eigene Reibwerte und Spezifikationen.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-2">Schaltgetriebe</h3>
+                    <p class="text-gray-700">Meist GL-4/GL-5 Öle in 75W-80 / 75W-90 / 80W-90. Schaltkomfort und Synchronverträglichkeit beachten.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="text-lg font-semibold mb-2">Automatik (ATF)</h3>
+                    <p class="text-gray-700">Spezielle ATF nach OEM-Spezifikationen (z. B. Dexron, Mercon, MB 236.x). Reibwert stabil über die Lebensdauer.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-2">CVT</h3>
+                    <p class="text-gray-700">Spezifische CVT-Fluids für Stahlzugband- oder Kegelriemen-CVT. Hohe Scherstabilität, definierte Reibcharakteristik.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-2">DSG/DCT</h3>
+                    <p class="text-gray-700">Fluids für nass/trocken Doppelkupplungen. Exakte Reibwerte für Kupplungspakete und Hydraulik.</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="125">
+                <a href="oelwegweiser.html" class="btn-primary inline-flex items-center">
+                    <i class="fas fa-wrench mr-2"></i>
+                    Passendes Getriebeöl finden
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spezifikationen -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Spezifikationen und Freigaben</h2>
+                    <p class="text-gray-700 mb-4">Wichtige Normen und Herstellerfreigaben für Getriebeöle:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>API GL</strong>: GL-4/GL-5 für Hypoid-Getriebe und Achsen.</li>
+                        <li><strong>OEM</strong>: VW G 052/G 060, MB 235.x/236.x, ZF TE-ML, BMW MTF, Honda MTF, Toyota WS, u. v. m.</li>
+                        <li><strong>ATF/CVT/DSG</strong>: Dexron, Mercon, MB 236.xx, ZF Lifeguard, JASO- und Hersteller-spezifische Freigaben.</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">Achten Sie auf exakte Freigaben – falsche Reibwerte führen zu Schaltproblemen und vorzeitigem Verschleiß.</p>
+                </div>
+                <div class="bg-pattern-card rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="75">
+                    <h3 class="text-lg font-semibold mb-3">Tipp</h3>
+                    <p class="text-gray-700">Bei Mischflotten (PKW, Transporter, LKW) lohnt eine Übersicht der OEM-Freigaben zur Reduktion der Sortenvielfalt.</p>
+                    <a href="kontakt.html" class="inline-flex items-center text-accent font-semibold mt-3">Beratung anfordern <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wartung und Intervalle -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Wartung, Intervalle und Hinweise</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                        <li>Wechselintervalle und Füllmengen gemäß OEM einhalten.</li>
+                        <li>Keine universalen Fluids verwenden, wenn spezifische Freigaben gefordert sind.</li>
+                        <li>Bei ATF/CVT/DSG: Temperatur- und Füllstandsvorgaben strikt beachten.</li>
+                        <li>Keine Vermischung unterschiedlicher Spezifikationen ohne Freigabe.</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <a href="produkte.html" class="btn-accent inline-flex items-center">
+                            <i class="fas fa-box-open mr-2"></i>
+                            Getriebeöle ansehen
+                        </a>
+                        <a href="kontakt.html" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded inline-flex items-center transition-colors">
+                            <i class="fas fa-headset mr-2"></i>
+                            Technische Beratung
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-pattern-card rounded-lg p-6 shadow-md">
+                        <h3 class="text-lg font-semibold mb-3">Häufige Fehler vermeiden</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Falsche API-GL-Klasse</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> ATF statt MTF (oder umgekehrt)</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Nicht freigegebene Universalöle</li>
+                            <li class="flex"><i class="fas fa-times text-accent mr-2 mt-1"></i> Falscher Füllstand/Temperatur bei ATF-Servicen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (details) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Häufige Fragen zu Getriebeöl</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Kurz beantwortet – für Werkstätten und anspruchsvolle Anwender.</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Kann ich GL-5 statt GL-4 verwenden?</summary>
+                    <div class="pt-3 text-gray-700">Nicht immer. GL-5 enthält stärkere EP-Additive, die manche Synchronmaterialien beeinträchtigen können. Herstellerfreigabe beachten.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="25">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Muss ATF lebenslang nicht gewechselt werden?</summary>
+                    <div class="pt-3 text-gray-700">„Lifetime“-Füllungen sind oft Marketing. Bei schwerem Einsatz empfiehlt sich ein Wechsel gemäß Herstellervorgaben.</div>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-5" data-aos="fade-up" data-aos-delay="50">
+                    <summary class="cursor-pointer font-semibold text-gray-800">Sind CVT- und DSG-Öle austauschbar?</summary>
+                    <div class="pt-3 text-gray-700">Nein. CVT und DSG benötigen vollkommen unterschiedliche Reibwertprofile und Additivierungen.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Brauchen Sie das richtige Getriebeöl?</h2>
+                <p class="text-lg text-gray-300 mb-8">Wir unterstützen Sie bei der Auswahl – für sanfte Schaltvorgänge und maximale Lebensdauer.</p>
+                <div class="flex flex-col sm:flex-row items-center sm:justify-center gap-4">
+                    <a href="kontakt.html" class="btn-accent inline-flex items-center w-auto self-center text-center px-8 py-4 font-semibold text-lg">
+                        Kontakt aufnehmen
+                    </a>
+                    <a href="produkte.html" class="bg-white hover:bg-gray-200 text-gray-800 px-8 py-4 rounded font-semibold text-lg text-center transition-colors inline-flex items-center justify-center w-auto self-center">
+                        <i class="fas fa-box-open mr-2"></i>
+                        Getriebeöl-Produkte ansehen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <!-- Main Footer -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-6">
+                        <img src="../bilder/elat-logo-weiss.png" alt="Elat Handels GmbH" class="h-12">
+                    </div>
+                    <p class="mb-4">
+                        Ihr zuverlässiger Partner für hochwertige Schmierstoffe. Qualität Made in Germany seit 2016.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Produkte</h4>
+                    <ul class="space-y-3">
+                        <li><a href="motoroel.html" class="hover:text-white transition-colors">PKW Motoröl</a></li>
+                        <li><a href="lkw-motoroel.html" class="hover:text-white transition-colors">LKW Motoröl</a></li>
+                        <li><a href="getriebeoel.html" class="hover:text-white transition-colors">Getriebeöl</a></li>
+                        <li><a href="hydraulikoel.html" class="hover:text-white transition-colors">Hydrauliköl</a></li>
+                        <li><a href="frostschutz.html" class="hover:text-white transition-colors">Frostschutz</a></li>
+                        <li><a href="altoelentsorgung.html" class="hover:text-white transition-colors">Altöl</a></li>
+                        <li><a href="produkte.html" class="hover:text-white transition-colors">Alle Produkte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Unternehmen</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="oelwegweiser.html" class="hover:text-white transition-colors">Ölwegweiser</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>Hörderstraße 353<br>58454 Witten<br>Deutschland</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+                            <span>+49 (0) 2306 91 29 380</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <span>info@elathandels.de</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2025 Elat Handels GmbH. Alle Rechte vorbehalten.</p>
+                    <div class="mt-4 md:mt-0 flex items-center gap-4">
+                        <button type="button" class="underline hover:text-white" onclick="window.ConsentManager && window.ConsentManager.open()">Cookie-Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent System -->
+    <script src="js/consent-manager.js"></script>
+    <script src="js/consent-restrictions.js"></script>
+    
+    <!-- Basis-Skripte -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
+        });
+        // Mobile Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    // Toggle the dropdown
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        dropdown.classList.add('active');
+                    } else {
+                        content.classList.add('hidden');
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
