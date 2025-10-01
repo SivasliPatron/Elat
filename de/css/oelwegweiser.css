@@ -1,0 +1,369 @@
+/* Ölwegweiser specific styles */
+
+/* Hero section enhancements */
+.hero-oil-guide {
+    position: relative;
+}
+
+.hero-oil-guide::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(184, 50, 50, 0.05);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.hero-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.oil-finder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oil-finder-form {
+    flex: 1;
+    min-width: 300px;
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-container {
+    flex: 2;
+    min-width: 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#findOilBtn {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#findOilBtn:hover {
+    background-color: #004c99;
+}
+
+#findOilBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.oil-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.oil-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.oil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.oil-card-image {
+    height: 180px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oil-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.oil-card-content {
+    padding: 1.5rem;
+}
+
+.oil-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.oil-card-specs {
+    margin-bottom: 1rem;
+}
+
+.oil-card-spec {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.oil-card-spec-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.oil-card-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.oil-card-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.oil-card-button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.oil-card-button:hover {
+    background-color: #004c99;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+/* Loading indicator */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0066cc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* HSN/TSN specific styles */
+.hsn-tsn-section {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+}
+
+.hsn-tsn-section:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 85, 204, 0.1);
+}
+
+.hsn-tsn-section h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.hsn-tsn-section .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: end;
+}
+
+.hsn-input, .tsn-input {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    height: 3.5rem;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hsn-input:focus, .tsn-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 85, 204, 0.1), 0 4px 12px rgba(0, 85, 204, 0.15);
+    transform: translateY(-1px);
+}
+
+.hsn-input:valid, .tsn-input:valid {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.hsn-input:invalid:not(:placeholder-shown), .tsn-input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.hsn-input::placeholder, .tsn-input::placeholder {
+    color: #9ca3af;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* Label styling für HSN/TSN */
+.hsn-tsn-section label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.hsn-tsn-section label .text-xs {
+    display: block;
+    margin-top: 0.25rem;
+    color: #6b7280;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+/* Info-Text Styling */
+.hsn-tsn-section .mt-3 p {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #1e40af;
+    line-height: 1.4;
+}
+
+.hsn-tsn-section .mt-3 p i {
+    color: #3b82f6;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Anpassungen für HSN/TSN */
+@media (max-width: 640px) {
+    .hsn-tsn-section .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .hsn-input, .tsn-input {
+        font-size: 1rem;
+        height: 3rem;
+    }
+}
+
+/* Form separator styling */
+.form-separator {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.form-separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d1d5db, transparent);
+}
+
+.form-separator span {
+    background: white;
+    padding: 0 1rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .oil-finder-container {
+        flex-direction: column;
+    }
+    
+    .oil-results {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,70 @@
+/* =============================================================================
+   Shared Inline Styles - Common patterns extracted from HTML files
+   Date: 2025-09-27
+   Purpose: Frequently used inline styles converted to reusable classes
+============================================================================= */
+
+/* Transform reset - used 13 times across files */
+.transform-none-important {
+    transform: none !important;
+}
+
+/* Hero height variable - Large imposing section */
+.hero-height {
+    height: var(--hero-h, 100vh);
+    min-height: 90vh; /* Mindestens 90% des Viewports */
+    max-height: 110vh; /* Kann auch über den Viewport hinausgehen */
+}
+
+/* Hero Section imposante Darstellung */
+#heroSection {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Content größer und imposanter */
+#heroSection .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#heroSection h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem) !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+}
+
+#heroSection p {
+    font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
+    line-height: 1.4 !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Object positioning */
+.object-center-70 {
+    object-position: center 70%;
+}
+
+/* Pointer events */
+.pointer-events-none {
+    pointer-events: none;
+}
+
+/* Border reset */
+.border-none {
+    border: 0;
+}
+
+/* Opacity and pointer events combination */
+.hidden-overlay {
+    opacity: 0;
+    pointer-events: none;
+}

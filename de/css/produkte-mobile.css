@@ -1,0 +1,58 @@
+/* Mobile-spezifische Stile für Produkte-Seite */
+@media (max-width: 1023px) {
+    /* Filter und Produkte Layout */
+    .order-mobile-first {
+        -ms-flex-order: 1;
+        order: 1;
+    }
+    
+    .order-mobile-second {
+        -ms-flex-order: 2;
+        order: 2;
+    }
+    
+    /* Filter Styling */
+    #filter-content {
+        border: 1px solid #e5e7eb;
+    }
+    
+    #filter-content.visible {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Produktkarten */
+    .product-item {
+        padding: 1rem !important;
+    }
+    
+    .product-item h3 {
+        font-size: 1.125rem;
+        text-align: center;
+    }
+    
+    .product-item .flex-wrap {
+        justify-content: center;
+    }
+    
+    /* Paginierung */
+    #pagination {
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+    }
+    
+    #pagination .page-number {
+        font-size: 0.875rem;
+    }
+    
+    /* Bessere Touch-Flächen für Checkboxen und Radio-Buttons */
+    .category-filter, .viscosity-filter, .spec-filter {
+        min-width: 18px;
+        min-height: 18px;
+    }
+    
+    label.flex.items-center {
+        padding: 0.375rem 0;
+    }
+}

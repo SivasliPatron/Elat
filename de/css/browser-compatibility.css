@@ -1,0 +1,539 @@
+/* =====================================================
+   BROWSER COMPATIBILITY CSS
+   Provides fallbacks and vendor prefixes for older browsers
+   Addresses all compatibility warnings from browser dev tools
+   ===================================================== */
+
+/* =================
+   TEXT SIZE ADJUST
+   ================= */
+:host,
+html {
+    -webkit-text-size-adjust: 100%; /* Safari */
+    -ms-text-size-adjust: 100%;     /* IE/Edge */
+    text-size-adjust: 100%;         /* Modern browsers: Chrome 54+, Edge 79+ */
+}
+
+/* =================
+   GRID LAYOUT FIXES
+   ================= */
+/* Grid fallback for IE10+ */
+.grid {
+    display: -ms-grid;      /* IE10+ */
+    display: grid;          /* Modern browsers */
+}
+
+/* Grid columns fallback */
+.grid-cols-1 {
+    -ms-grid-columns: 1fr;                    /* IE10+ */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Modern */
+}
+
+@media (min-width: 768px) {
+    .grid-cols-2 {
+        -ms-grid-columns: 1fr 1fr;           /* IE10+ */
+        grid-template-columns: repeat(2, 1fr); /* Modern */
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-cols-3 {
+        -ms-grid-columns: 1fr 1fr 1fr;       /* IE10+ */
+        grid-template-columns: repeat(3, 1fr); /* Modern */
+    }
+    
+    .grid-cols-4 {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;   /* IE10+ */
+        grid-template-columns: repeat(4, 1fr); /* Modern */
+    }
+}
+
+/* Products grid specific fixes */
+.products-grid {
+    display: -ms-grid;      /* IE10+ */
+    display: grid;          /* Modern browsers */
+    -ms-grid-columns: 1fr;  /* IE10+ fallback */
+    grid-template-columns: 1fr; /* Modern fallback */
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        -ms-grid-columns: 1fr 2rem 1fr;      /* IE10+ with gap */
+        grid-template-columns: repeat(2, 1fr); /* Modern */
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid {
+        -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr; /* IE10+ with gap */
+        grid-template-columns: repeat(3, 1fr);    /* Modern */
+    }
+}
+
+/* =================
+   FLEXBOX FIXES
+   ================= */
+/* Flex direction fallback */
+.flex-col {
+    -ms-flex-direction: column; /* IE10+ */
+    flex-direction: column;     /* Modern */
+}
+
+.flex-row {
+    -ms-flex-direction: row;    /* IE10+ */
+    flex-direction: row;        /* Modern */
+}
+
+/* Flex property fallback */
+.flex-1 {
+    -ms-flex: 1 1 0%;          /* IE10+ */
+    flex: 1 1 0%;              /* Modern */
+}
+
+.flex {
+    display: -webkit-box;       /* Old webkit */
+    display: -ms-flexbox;       /* IE10+ */
+    display: flex;              /* Modern */
+}
+
+/* Flex wrap fallback */
+.flex-wrap {
+    -ms-flex-wrap: wrap;        /* IE10+ */
+    flex-wrap: wrap;            /* Modern */
+}
+
+/* Align items fallback */
+.items-start {
+    -webkit-box-align: start;   /* Old webkit */
+    -ms-flex-align: start;      /* IE10+ */
+    align-items: flex-start;    /* Modern */
+}
+
+.items-center {
+    -webkit-box-align: center;  /* Old webkit */
+    -ms-flex-align: center;     /* IE10+ */
+    align-items: center;        /* Modern */
+}
+
+.items-end {
+    -webkit-box-align: end;     /* Old webkit */
+    -ms-flex-align: end;        /* IE10+ */
+    align-items: flex-end;      /* Modern */
+}
+
+/* Justify content fallback */
+.justify-start {
+    -webkit-box-pack: start;    /* Old webkit */
+    -ms-flex-pack: start;       /* IE10+ */
+    justify-content: flex-start; /* Modern */
+}
+
+.justify-center {
+    -webkit-box-pack: center;   /* Old webkit */
+    -ms-flex-pack: center;      /* IE10+ */
+    justify-content: center;    /* Modern */
+}
+
+.justify-end {
+    -webkit-box-pack: end;      /* Old webkit */
+    -ms-flex-pack: end;         /* IE10+ */
+    justify-content: flex-end;  /* Modern */
+}
+
+.justify-between {
+    -webkit-box-pack: justify;  /* Old webkit */
+    -ms-flex-pack: justify;     /* IE10+ */
+    justify-content: space-between; /* Modern */
+}
+
+/* =================
+   ORDER PROPERTY
+   ================= */
+.order-1 {
+    -webkit-box-ordinal-group: 2; /* Old webkit (1-based) */
+    -ms-flex-order: 1;            /* IE10+ */
+    order: 1;                     /* Modern */
+}
+
+.order-2 {
+    -webkit-box-ordinal-group: 3; /* Old webkit (1-based) */
+    -ms-flex-order: 2;            /* IE10+ */
+    order: 2;                     /* Modern */
+}
+
+.order-3 {
+    -webkit-box-ordinal-group: 4; /* Old webkit (1-based) */
+    -ms-flex-order: 3;            /* IE10+ */
+    order: 3;                     /* Modern */
+}
+
+/* =================
+   BACKDROP FILTER
+   ================= */
+/* Backdrop filter with fallbacks */
+.backdrop-filter,
+header {
+    -webkit-backdrop-filter: blur(8px); /* Safari */
+    backdrop-filter: blur(8px);         /* Modern browsers */
+    /* IE fallback - solid background */
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.glass-effect {
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+    backdrop-filter: blur(10px);         /* Modern browsers */
+    background-color: rgba(255, 255, 255, 0.85); /* IE fallback */
+}
+
+/* Consent overlay backdrop */
+.consent-overlay {
+    -webkit-backdrop-filter: blur(0px);  /* Safari */
+    backdrop-filter: blur(0px);          /* Modern browsers */
+    background-color: rgba(0, 0, 0, 0.5); /* IE fallback */
+}
+
+/* Product modal backdrop */
+.product-modal {
+    -webkit-backdrop-filter: blur(8px);  /* Safari */
+    backdrop-filter: blur(8px);          /* Modern browsers */
+    background-color: rgba(0, 0, 0, 0.7); /* IE fallback */
+}
+
+/* =================
+   TRANSFORM FIXES
+   ================= */
+/* Transform with vendor prefixes */
+.transform {
+    -webkit-transform: translateZ(0);    /* Safari */
+    -ms-transform: translateZ(0);        /* IE9+ */
+    transform: translateZ(0);            /* Modern */
+}
+
+.transform .translate-y-1\/2 {
+    -webkit-transform: translateY(-50%); /* Safari */
+    -ms-transform: translateY(-50%);     /* IE9+ */
+    transform: translateY(-50%);         /* Modern */
+}
+
+/* =================
+   APPEARANCE FIXES
+   ================= */
+/* Button appearance normalization */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;          /* Safari */
+    -moz-appearance: button;             /* Firefox */
+    appearance: button;                  /* Modern browsers */
+}
+
+/* Search input appearance */
+[type="search"] {
+    -webkit-appearance: searchfield;     /* Safari */
+    -moz-appearance: searchfield;        /* Firefox */
+    appearance: searchfield;             /* Modern browsers */
+    outline-offset: -2px;                /* Modern browsers only */
+}
+
+/* =================
+   POSITION FIXES
+   ================= */
+/* Sticky position fallback */
+.sticky {
+    position: -webkit-sticky;            /* Safari */
+    position: sticky;                    /* Modern browsers */
+    /* IE fallback - will use fixed positioning via JS */
+}
+
+/* =================
+   GAP PROPERTY
+   ================= */
+/* Grid gap fallback for older browsers */
+.gap-2 {
+    grid-gap: 0.5rem;                    /* Old grid spec */
+    gap: 0.5rem;                         /* Modern */
+}
+
+.gap-4 {
+    grid-gap: 1rem;                      /* Old grid spec */
+    gap: 1rem;                           /* Modern */
+}
+
+.gap-6 {
+    grid-gap: 1.5rem;                    /* Old grid spec */
+    gap: 1.5rem;                         /* Modern */
+}
+
+.gap-8 {
+    grid-gap: 2rem;                      /* Old grid spec */
+    gap: 2rem;                           /* Modern */
+}
+
+/* =================
+   OBJECT FIT
+   ================= */
+/* Object fit fallback */
+.object-contain {
+    object-fit: contain;                 /* Modern browsers */
+    /* IE fallback handled via JavaScript or background-image */
+}
+
+.object-cover {
+    object-fit: cover;                   /* Modern browsers */
+    /* IE fallback handled via JavaScript or background-image */
+}
+
+/* =================
+   WIDTH FIT-CONTENT
+   ================= */
+.w-fit {
+    width: -webkit-fit-content;          /* Safari */
+    width: -moz-fit-content;             /* Firefox */
+    width: fit-content;                  /* Modern browsers */
+    /* IE fallback - will use auto width */
+    width: auto\9;                       /* IE hack */
+}
+
+/* =================
+   TEXT PROPERTIES
+   ================= */
+/* Text decoration properties */
+.underline {
+    text-decoration: underline;          /* IE fallback */
+    text-decoration-line: underline;     /* Modern browsers */
+}
+
+/* Text align support for IE */
+.text-center {
+    text-align: center;                  /* All browsers */
+}
+
+.text-left {
+    text-align: left;                    /* All browsers */
+}
+
+.text-right {
+    text-align: right;                   /* All browsers */
+}
+
+/* =================
+   SCROLLBAR STYLING
+   ================= */
+/* Scrollbar width - Firefox specific with fallback */
+#page-numbers {
+    scrollbar-width: none;               /* Firefox */
+    -ms-overflow-style: none;            /* IE */
+}
+
+#page-numbers::-webkit-scrollbar {
+    display: none;                       /* Chrome, Safari */
+}
+
+/* =================
+   INSET PROPERTY
+   ================= */
+/* Inset property fallback */
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* =================
+   CLIP PATH
+   ================= */
+/* Clip path with fallback */
+.consent-input {
+    -webkit-clip-path: inset(50%);       /* Safari */
+    clip-path: inset(50%);               /* Modern browsers */
+    /* IE fallback - hide with positioning */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* =================
+   SCALE PROPERTY
+   ================= */
+/* Scale property fallback */
+.consent-modal {
+    -webkit-transform: scale(0.8);       /* Safari */
+    -ms-transform: scale(0.8);           /* IE9+ */
+    transform: scale(0.8);               /* Modern browsers */
+}
+
+/* =================
+   SCROLL BEHAVIOR
+   ================= */
+/* Smooth scrolling with fallback */
+html {
+    scroll-behavior: smooth;             /* Modern browsers */
+    /* IE fallback handled via JavaScript */
+}
+
+/* =================
+   POINTER EVENTS
+   ================= */
+/* Pointer events fallback */
+.pointer-events-none {
+    pointer-events: none;                /* IE11+ and modern browsers */
+}
+
+.pointer-events-auto {
+    pointer-events: auto;                /* IE11+ and modern browsers */
+}
+
+/* =================
+   BACKGROUND CLIP
+   ================= */
+/* Background clip text fallback */
+.text-gradient {
+    -webkit-background-clip: text;       /* Safari */
+    background-clip: text;               /* Modern browsers */
+    -webkit-text-fill-color: transparent; /* Safari */
+    /* IE fallback - regular text color */
+    color: var(--primary-color);
+}
+
+/* =================
+   OVERSCROLL BEHAVIOR
+   ================= */
+/* Overscroll behavior fallback */
+body {
+    overscroll-behavior: none;           /* Modern browsers */
+    /* IE fallback - handled via JavaScript */
+}
+
+/* =================
+   IE SPECIFIC FIXES
+   ================= */
+/* IE-specific media query hack */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* IE10+ specific styles */
+    .flex {
+        display: -ms-flexbox;
+    }
+    
+    .grid {
+        display: block; /* Fallback to block layout in IE */
+    }
+    
+    .products-grid > * {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* =================
+   CONTAIN PROPERTY
+   ================= */
+/* Contain property fallback */
+header {
+    contain: layout style;               /* Modern browsers only */
+    /* IE fallback - no containment */
+}
+
+/* =================
+   FILTER PROPERTY
+   ================= */
+/* Filter effects fallback */
+.filter-blur {
+    -webkit-filter: blur(12px);          /* Safari */
+    filter: blur(12px);                  /* Modern browsers */
+    /* IE fallback - no filter effect */
+}
+
+/* =================
+   RESIZE PROPERTY
+   ================= */
+/* Textarea resize fallback */
+textarea {
+    resize: vertical;                    /* Modern browsers */
+    /* IE fallback - default resize behavior */
+}
+
+/* =================
+   TAB SIZE
+   ================= */
+/* Tab size fallback */
+:host,
+html {
+    -moz-tab-size: 4;                    /* Firefox */
+    -o-tab-size: 4;                      /* Opera */
+    tab-size: 4;                         /* Modern browsers */
+}
+
+/* =================
+   BORDER IMAGE
+   ================= */
+/* Border image fallback */
+.blue-red-border {
+    border: 2px solid var(--primary-color); /* IE fallback */
+    border-image: linear-gradient(to right, var(--primary-color), var(--secondary-color)) 1; /* Modern browsers */
+    border-image-slice: 1;               /* Modern browsers */
+}
+
+/* =================
+   COLOR SCHEME
+   ================= */
+/* Color scheme fallback */
+.dark {
+    color-scheme: dark;                  /* Modern browsers */
+    /* IE fallback - handled via CSS custom properties */
+}
+
+/* =================
+   ISOLATION
+   ================= */
+/* Isolation property fallback */
+header {
+    isolation: isolate;                  /* Modern browsers */
+    /* IE fallback - uses z-index stacking */
+}
+
+/* =================
+   FONT VARIATION
+   ================= */
+/* Font variation settings fallback */
+:host,
+html {
+    font-variation-settings: normal;     /* Modern browsers with variable fonts */
+    /* IE fallback - uses standard font weights */
+}
+
+/* =================
+   TEXT RENDERING
+   ================= */
+/* Text rendering optimization */
+.fa,
+.fa-brands,
+.fa-classic,
+.fa-regular,
+.fa-sharp,
+.fa-solid,
+.fab,
+.far,
+.fas {
+    text-rendering: auto;                /* Modern browsers */
+    /* IE fallback - default text rendering */
+}
+
+/* =================
+   CUSTOM FIXES FOR INLINE STYLES
+   ================= */
+/* Header transform fix */
+.header-no-transform {
+    -webkit-transform: none !important;  /* Safari */
+    -ms-transform: none !important;      /* IE9+ */
+    transform: none !important;          /* Modern browsers */
+}
+
+/* Search clear button hidden state */
+.search-clear-hidden {
+    opacity: 0;
+    pointer-events: none;
+}

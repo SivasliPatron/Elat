@@ -1,0 +1,422 @@
+/* =====================================================
+   NAVIGATION FIX - ÜBERSCHREIBT ALLE ANDEREN CODES!
+   Diese CSS-Datei wird als LETZTE geladen und überschreibt
+   JEDEN anderen Navigation-Code mit !important
+   ===================================================== */
+
+/* HEADER GRUNDEINSTELLUNGEN - ÜBERSCHREIBT ALLES */
+header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+    -webkit-transform: translateZ(0) !important;
+    -ms-transform: translateZ(0) !important;
+    transform: translateZ(0) !important; /* Bessere Performance mit GPU-Layering */
+}
+
+/* HEADER BEIM SCROLLEN - NOCH STÄRKERE EFFEKTE */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+/* HEADER CONTAINER - ÜBERSCHREIBT PADDING */
+header .container {
+    transition: padding 0.3s ease !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+header.scrolled .container {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+/* VERHINDERE PROBLEMATISCHE TRANSFORM-EIGENSCHAFTEN */
+/* Entfernt - verursachte Mobile Scroll-Bugs */
+
+/* BODY ANPASSUNG FÜR FIXED HEADER */
+body {
+    padding-top: 80px !important; /* Platz für den fixed header */
+}
+
+/* =====================================================
+   DROPDOWN MENU STYLING
+   ===================================================== */
+
+/* Dropdown Container */
+.dropdown-container {
+    position: relative !important;
+}
+
+/* Dropdown Hover Effect */
+.dropdown-container:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Dropdown Menu Base Styling */
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0.5rem !important;
+    width: 16rem !important;
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(229, 231, 235, 1) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(0.5rem) !important;
+    transition: all 0.3s ease !important;
+    z-index: 50 !important;
+    overflow: hidden !important;
+}
+
+/* Dropdown Arrow Rotation */
+.dropdown-container:hover .fa-chevron-down {
+    transform: rotate(180deg) !important;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    color: rgb(55, 65, 81) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-bottom: none !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(249, 250, 251) !important;
+    color: var(--primary-color, #B83232) !important;
+    transform: translateX(4px) !important;
+}
+
+.dropdown-item i {
+    margin-right: 0.75rem !important;
+    color: var(--primary-color, #B83232) !important;
+    width: 1rem !important;
+    text-align: center !important;
+}
+
+/* =====================================================
+   MOBILE DROPDOWN STYLING
+   ===================================================== */
+
+/* Mobile Dropdown Container */
+.mobile-dropdown {
+    position: relative !important;
+}
+
+/* Mobile Dropdown Toggle */
+.mobile-dropdown-toggle {
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-size: inherit !important;
+}
+
+/* Mobile Dropdown Content */
+.mobile-dropdown-content {
+    margin-left: 1rem !important;
+    margin-top: 0.5rem !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+    border-radius: 0.375rem !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* Mobile Dropdown Arrow Rotation */
+.mobile-dropdown.active .fa-chevron-down {
+    transform: rotate(180deg) !important;
+}
+
+/* MOBILE SCROLL STABILISIERUNG */
+
+/* =====================================================
+   DROPDOWN MENU STYLING
+   ===================================================== */
+
+/* Dropdown Container */
+.dropdown-container {
+    position: relative !important;
+}
+
+/* Dropdown Hover Effect */
+.dropdown-container:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Dropdown Menu Base Styling */
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0.5rem !important;
+    width: 16rem !important;
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(229, 231, 235, 1) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(0.5rem) !important;
+    transition: all 0.3s ease !important;
+    z-index: 50 !important;
+    overflow: hidden !important;
+}
+
+/* Dropdown Arrow Rotation */
+.dropdown-container:hover .fa-chevron-down {
+    transform: rotate(180deg) !important;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    color: rgb(55, 65, 81) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-bottom: none !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(249, 250, 251) !important;
+    color: var(--primary-color, #B83232) !important;
+    transform: translateX(4px) !important;
+}
+
+.dropdown-item i {
+    margin-right: 0.75rem !important;
+    color: var(--primary-color, #B83232) !important;
+    width: 1rem !important;
+    text-align: center !important;
+}
+
+/* =====================================================
+   MOBILE DROPDOWN STYLING
+   ===================================================== */
+
+/* Mobile Dropdown Container */
+.mobile-dropdown {
+    position: relative !important;
+}
+
+/* Mobile Dropdown Toggle */
+.mobile-dropdown-toggle {
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-size: inherit !important;
+}
+
+/* Mobile Dropdown Content */
+.mobile-dropdown-content {
+    margin-left: 1rem !important;
+    margin-top: 0.5rem !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+    border-radius: 0.375rem !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* Mobile Dropdown Arrow Rotation */
+.mobile-dropdown.active .fa-chevron-down {
+    transform: rotate(180deg) !important;
+}
+
+/* MOBILE SCROLL STABILISIERUNG */
+html {
+    -webkit-overflow-scrolling: touch !important;
+    scroll-behavior: smooth !important;
+}
+
+/* Verhindere Scroll-Bounce auf iOS */
+body {
+    overscroll-behavior: none !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* RESPONSIVE ANPASSUNGEN - MOBILE OPTIMIERT */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px !important;
+    }
+    
+    /* Mobile Performance Verbesserungen */
+    header {
+        -webkit-transform: translateZ(0) !important;
+        -ms-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        /* Reduziere Backdrop-Filter auf Mobile für bessere Performance */
+        -webkit-backdrop-filter: blur(5px) !important;
+        backdrop-filter: blur(5px) !important;
+    }
+    
+    header .container {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    
+    header.scrolled .container {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+}
+
+/* NAVIGATION LINKS - HOVER EFFEKTE */
+header nav a {
+    /* Animation entfernt - verursachte störende Bewegung beim Seitenwechsel */
+    transition: color 0.2s ease !important;
+}
+
+header nav a:hover {
+    /* transform: translateY(-1px) !important; */ /* ENTFERNT - störende Animation */
+    color: var(--primary-color, #0055CC) !important;
+}
+
+/* =====================================================
+   ANTI-ANIMATION REGELN - VERHINDERT STÖRENDE BEWEGUNGEN
+   ===================================================== */
+
+/* Verhindere Transform-Animationen bei Navigation */
+header nav a,
+header .nav-link,
+nav a,
+nav .nav-link,
+.navbar a,
+.navbar .nav-link {
+    transform: none !important;
+}
+
+header nav a:hover,
+header .nav-link:hover,
+nav a:hover,
+nav .nav-link:hover,
+.navbar a:hover,
+.navbar .nav-link:hover {
+    transform: none !important;
+}
+
+/* Vermeide störende Transitions beim Seitenwechsel */
+header nav a,
+header .nav-link {
+    transition: color 0.2s ease !important;
+}
+
+/* MOBILE MENU FIXES */
+#mobile-menu {
+    background-color: white !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* LOGO ANPASSUNGEN */
+header img,
+header .logo {
+    transition: all 0.3s ease !important;
+    max-height: 40px !important;
+}
+
+header.scrolled img,
+header.scrolled .logo {
+    max-height: 32px !important;
+}
+
+/* WEITERE OVERRIDES FÜR HÄUFIGE KONFLIKTE */
+.sticky {
+    position: fixed !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+.z-50 {
+    z-index: 9999 !important;
+}
+
+/* ANIMATION PERFORMANCE OPTIMIERUNG - MOBILE SAFE */
+header {
+    contain: layout style !important; /* Entfernt 'paint' für Mobile Kompatibilität */
+    isolation: isolate !important; /* Bessere Alternative zu content-visibility */
+}
+
+/* ===============================
+   OPTIONALE ABSTAND-DEAKTIVIERUNG
+   Für Seiten mit dynamischer Hero-Höhe (die bereits den Header-Höhenabzug machen)
+   kann der globale Body-Offset zu einem sichtbaren Spalt zwischen Navi und Hero führen.
+   In diesem Fall einfach der <body> das Flag 'has-hero-offset' geben, um den Offset
+   zu deaktivieren.
+   =============================== */
+body.has-hero-offset {
+    padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    body.has-hero-offset {
+        padding-top: 0 !important;
+    }
+}
+
+/* =====================================================
+   FINALE NAVIGATION ANIMATION KILLER - WICHTIG!
+   Diese Regeln ÜBERSCHREIBEN alle anderen Animationen
+   ===================================================== */
+
+/* Alle Navigation Links - KEINE Transform-Animationen! */
+header a, 
+header button,
+nav a, 
+nav button,
+.navbar a, 
+.navbar button,
+.nav-link,
+.navigation a,
+.menu a {
+    transform: none !important;
+    animation: none !important;
+}
+
+header a:hover, 
+header button:hover,
+nav a:hover, 
+nav button:hover,
+.navbar a:hover, 
+.navbar button:hover,
+.nav-link:hover,
+.navigation a:hover,
+.menu a:hover {
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Reduzierte Transitions nur für Farben */
+header a, 
+nav a, 
+.nav-link {
+    transition: color 0.2s ease !important;
+}
+
+/* Ende der Navigation Animation Killer */

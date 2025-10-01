@@ -1,0 +1,7 @@
+/* Minimal overrides for consent UI if needed (uses inline <style> within JS by default). */
+/* You can keep this empty or add theme-specific adjustments. */
+:root {
+  --consent-accent: #B83232;
+}
+
+#consent-banner a.consent-link { color: var(--consent-accent); }

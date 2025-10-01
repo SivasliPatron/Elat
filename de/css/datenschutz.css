@@ -1,0 +1,105 @@
+/* Datenschutz page specific styles */
+
+/* ===== DATENSCHUTZ-SPECIFIC STYLES =====
+   Common styles moved to shared-components.css
+   =======================================
+
+/* Fix für Dark Mode Text-Sichtbarkeit */
+.dark .text-gray-600 {
+    color: #D1D5DB !important;
+}
+
+.dark .text-gray-500 {
+    color: #9CA3AF !important;
+}
+
+.dark .text-gray-700 {
+    color: #E5E7EB !important;
+}
+
+.dark .text-gray-800 {
+    color: #F3F4F6 !important;
+}
+
+.dark .text-gray-900 {
+    color: #F9FAFB !important;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#mobile-menu:not(.hidden) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.navbar-modern {
+    transition: all 0.3s ease;
+}
+
+.navbar-modern.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    backdrop-filter: blur(20px);
+}
+
+/* === ORIGINAL DATENSCHUTZ-SPECIFIC STYLES === */
+
+.bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Style for the Privacy Policy content */
+.prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.prose h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.prose ul {
+    margin-bottom: 1rem;
+}
+
+.prose a {
+    color: var(--accent-red);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.prose a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode adjustments */
+.dark .prose a {
+    color: var(--accent-red-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .prose {
+        font-size: 0.95rem;
+    }
+}

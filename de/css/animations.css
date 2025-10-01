@@ -1,0 +1,95 @@
+/* Animation Styles für den dynamischen Teiler */
+@-webkit-keyframes blob {
+  0% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    -webkit-transform: translate(30px, -50px) scale(1.1);
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    -webkit-transform: translate(-20px, 20px) scale(0.9);
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob {
+  0% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    -webkit-transform: translate(30px, -50px) scale(1.1);
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    -webkit-transform: translate(-20px, 20px) scale(0.9);
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) scale(1);
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  -webkit-animation: blob 7s infinite;
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+/* Glassmorphismus-Effekt */
+.backdrop-filter {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Öl-Welle Animation */
+@-webkit-keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-wave {
+  -webkit-animation: wave 15s ease infinite;
+  animation: wave 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Verbesserte Hover-Effekte */
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}

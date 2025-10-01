@@ -1,0 +1,582 @@
+/* Startseite Styling - Extracted from inline styles */
+
+/* CSS Variables */
+:root {
+    --dark-gray: #1F2937;
+    --anthracite: #111827;
+    --deep-anthracite: #0F172A;
+    --accent-red: #B83232;
+    --accent-red-light: #D25050;
+    --accent-red-dark: #8A2626;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+}
+
+/* Allgemeine Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('../../bilder/back.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--dark-gray);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Video Container Styling - Progressive Responsive Design */
+.video-container {
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+    position: relative;
+}
+
+/* Hero Video Container - Feste Größe bis zum Breakpoint */
+.video-container.hero-video-fixed {
+    /* Feste Container-Größe für alle Bildschirmgrößen */
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+    max-height: 280px;
+    border-radius: 12px;
+}
+
+/* Video innerhalb des Containers immer optimal füllend */
+.video-container.hero-video-fixed video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 70% !important;
+}
+
+/* Linke Hero-Spalte passend zur Video-Höhe */
+.hero-left-fixed {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Sehr kleine Mobile Geräte (bis 480px) - Container bleibt fix */
+@media (max-width: 480px) {
+    .video-container.hero-video-fixed {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        border-radius: 8px;
+    }
+    
+    .hero-left-fixed {
+        min-height: 220px;
+    }
+}
+
+/* Mobile Geräte (481px bis 582px) - Container bleibt fix */
+@media (min-width: 481px) and (max-width: 582px) {
+    .video-container.hero-video-fixed {
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+        border-radius: 10px;
+    }
+    
+    .hero-left-fixed {
+        min-height: 260px;
+    }
+}
+
+/* ANPASSUNGSBEREICH: Video wird responsiv zwischen 583px und 1024px */
+@media (min-width: 583px) and (max-width: 1024px) {
+    .video-container.hero-video-fixed {
+        /* Responsiver Container in diesem Bereich */
+        height: auto;
+        min-height: 280px;
+        max-height: 400px;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        width: 100%;
+    }
+    
+    .hero-left-fixed {
+        min-height: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* ANPASSUNGSPUNKT: Ab 1025px wird der Container wieder fix mit größerer Größe */
+@media (min-width: 1025px) {
+    .video-container.hero-video-fixed {
+        /* Ab 1025px wieder feste Größe */
+        height: 380px;
+        min-height: 380px;
+        max-height: 380px;
+        width: 100%;
+        border-radius: 16px;
+    }
+    
+    .hero-left-fixed {
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Große Desktop-Bildschirme (ab 1440px) - Maximale Größe begrenzen */
+@media (min-width: 1440px) {
+    .video-container.hero-video-fixed {
+        max-height: 450px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+/* Sehr große Bildschirme (ab 1920px) - Container zentriert mit max Größe */
+@media (min-width: 1920px) {
+    .video-container.hero-video-fixed {
+        max-height: 500px;
+        max-width: 900px;
+    }
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--accent-red);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(184, 50, 50, 0.3);
+}
+
+/* Sound Toggle Button */
+#soundToggle {
+    position: fixed !important;
+    bottom: 1.5rem !important;
+    right: 1.5rem !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+    -webkit-user-select: none; /* Safari support */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    width: 56px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    outline: none !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+#soundToggle:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    transform: scale(1.05);
+    animation: none;
+}
+
+#soundToggle:active {
+    transform: scale(0.95);
+}
+
+#soundToggle:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+/* Industrielle Karten-Stile */
+.industrial-card {
+    transition: all 0.3s;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff; /* Verhindert Durchscheinen des Hintergrundbildes */
+}
+
+.industrial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Fix: Karte unten bleibt weiß – kein Hintergrundbild durchscheinen */
+.industrial-card img {
+    display: block; /* entfernt Inline-Image-Baseline-Gap */
+}
+
+.industrial-card .bg-pattern-card {
+    background-image: none !important; /* Muster deaktivieren innerhalb von Karten auf Startseite */
+    background-color: #ffffff;         /* solider weißer Hintergrund */
+}
+
+.industrial-card .bg-pattern-card::before {
+    background: #ffffff !important; /* kein halbtransparenter Overlay innerhalb der Karten */
+}
+
+/* USP Icons */
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9fafb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.feature-icon:before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: 1px dashed var(--accent-red);
+    top: 5%;
+    left: 5%;
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.feature-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Trust Element Badge */
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border: 1px solid #e5e7eb;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation Styling - sticky header */
+header {
+    position: sticky !important;
+    top: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Deaktiviere AOS Animationen für den Header */
+header[data-aos],
+header [data-aos],
+nav[data-aos],
+nav [data-aos] {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Section with industrial diagonal separator */
+.industrial-divider {
+    position: relative;
+    padding: 6rem 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.industrial-divider::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 49.9%, var(--anthracite) 50%);
+    z-index: 1;
+}
+
+.industrial-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, var(--anthracite) 49.9%, transparent 50%);
+    z-index: 1;
+}
+
+/* FAQ Tab Styling */
+.faq-tab {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.faq-tab.active {
+    background-color: var(--accent-red);
+    color: white;
+    border-color: var(--accent-red);
+    box-shadow: 0 4px 6px rgba(184, 50, 50, 0.2);
+}
+
+.faq-tab:hover:not(.active) {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.faq-tab-content {
+    transition: all 0.3s ease;
+}
+
+.faq-tab-content.hidden {
+    display: none;
+}
+
+.faq-tab-content.active {
+    display: block;
+}
+
+/* Hero-Bereich Styling - Original Animations */
+.bg-gradient-to-r {
+    background-size: 200% auto;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Produktkategorien-Karten */
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+}
+
+/* Qualitäts-Bereich */
+.shadow-md:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Call to action Button */
+.bg-white:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Trigger Card Styling */
+#faq-trigger {
+    transition: all 0.3s ease;
+}
+
+#faq-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+#faq-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* FAQ Content Area */
+#faq-content {
+    animation: fadeInSlide 0.4s ease-out;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.faq-question {
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-question:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.faq-answer {
+    border-top: 1px solid #e5e7eb;
+    animation: slideDown 0.3s ease-out;
+}
+
+.faq-answer.hidden {
+    display: none;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.faq-icon.rotated {
+    transform: rotate(45deg);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FAQ Close Button */
+#faq-close {
+    transition: all 0.3s ease;
+}
+
+#faq-close:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support für FAQ */
+.dark #faq-trigger {
+    background: linear-gradient(135deg, #374151, #4b5563);
+    border-color: #6b7280;
+}
+
+.dark .faq-item {
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+.dark .faq-item:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.1);
+}
+
+.dark .faq-question span {
+    color: #f9fafb;
+}
+
+.dark .faq-answer {
+    color: #d1d5db;
+    border-color: #4b5563;
+}
+
+.dark .faq-icon {
+    color: #60a5fa;
+}
+
+.dark #faq-close {
+    background-color: #4b5563;
+    color: #e5e7eb;
+}
+
+.dark #faq-close:hover {
+    background-color: #6b7280;
+}
+
+/* Responsive FAQ Trigger */
+@media (max-width: 768px) {
+    #faq-trigger .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #faq-trigger .w-16 {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,81 @@
+/* Spezifische Styles für die Kontakt-Seite */
+
+/* ===== KONTAKT-SPECIFIC STYLES =====
+   Common styles moved to shared-components.css
+   ======================================= */
+
+/* Kontaktformular-spezifische Stile */
+#contactForm input:focus,
+#contactForm textarea:focus,
+#contactForm select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.15);
+    transform: translateY(-2px);
+}
+
+/* Kontakt-spezifische Formularvalidierung */
+.form-error {
+    border-color: #ef4444 !important;
+}
+
+.error-text {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Submit Button Animation */
+#submitContactForm:active {
+    transform: scale(0.98);
+}
+
+/* Social Media Buttons - kontakt-spezifisch (REMOVED: moved to shared-components.css) */
+
+/* Karte Styling */
+.map-container {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* FAQ Sektions-Styling */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Kontaktseite Hero-Sektion Animation */
+.hero-contact {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(to top, var(--neutral-light), transparent);
+    z-index: 2;
+}
+
+/* Responsive Styles für kleinere Bildschirme */
+@media (max-width: 768px) {
+    #contactForm .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info-container {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Pulsieren für Kontakt-CTA (REMOVED: moved to shared-components.css) */
+
+/* Shake animation für Kontakt-Formular (REMOVED: moved to shared-components.css) */

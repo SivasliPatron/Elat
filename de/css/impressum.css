@@ -1,0 +1,49 @@
+/* CSS for impressum.html */
+
+/* ===== IMPRESSUM-SPECIFIC STYLES =====
+   Common styles moved to shared-components.css
+   =======================================
+
+/* === ORIGINAL IMPRESSUM-SPECIFIC STYLES === */
+
+/* Special styling for legal sections */
+.legal-section {
+    border-left: 4px solid var(--accent-red);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for links in the impressum */
+.legal-link {
+    color: var(--accent-red);
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.legal-link:hover {
+    color: var(--accent-red-light);
+}
+
+/* Custom list styles for legal documents */
+.legal-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.legal-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Enhanced typography for legal text */
+.legal-text {
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .legal-section {
+        border-left: 2px solid var(--accent-red);
+        padding-left: 0.75rem;
+    }
+}

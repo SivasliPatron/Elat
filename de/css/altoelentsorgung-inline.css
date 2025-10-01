@@ -1,0 +1,13 @@
+/* =============================================================================
+   Extracted Inline Styles from altoelentsorgung.html
+   Date: 2025-09-27
+   Purpose: Basic font family styles that were inline
+============================================================================= */
+
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+h1, h2, h3 { 
+    font-family: 'Poppins', sans-serif; 
+}
